@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dq03qnnp2seom"]
+
+[ext_resource type="Script" uid="uid://cxjflqrp0s58h" path="res://scripts/Main.cs" id="1_main"]
+[ext_resource type="Script" uid="uid://cksfg68i2uxhg" path="res://scripts/WindowDetector.cs" id="2_windet"]
+[ext_resource type="Script" uid="uid://cad14mstu6mu3" path="res://scripts/LLMBridge.cs" id="3_llm"]
+[ext_resource type="Script" uid="uid://ch5j8wd5tts8j" path="res://scripts/CharacterController.cs" id="4_char"]
+[ext_resource type="Script" uid="uid://c7qmlc2cwoh3j" path="res://scripts/AnimationBuilder.cs" id="5_animb"]
+[ext_resource type="PackedScene" uid="uid://dn8kjmnpgwple" path="res://Aria.glb" id="6_aria"]
+
+[node name="Main" type="Node" unique_id=1511959269]
+script = ExtResource("1_main")
+VrmNodePath = NodePath("CharacterController/Aria")
+SpeechLabelPath = NodePath("UI/SpeechLabel")
+
+[node name="WindowDetector" type="Node" parent="." unique_id=948324158]
+script = ExtResource("2_windet")
+
+[node name="LLMBridge" type="Node" parent="." unique_id=706555255]
+script = ExtResource("3_llm")
+ModelName = "llama-3-8b-lexi-uncensored"
+
+[node name="AnimationBuilder" type="Node" parent="." unique_id=155030941]
+script = ExtResource("5_animb")
+AnimSources = Dictionary[String, String]({
+"change_dir": "res://ani/Change Direction.fbx",
+"climb": "res://ani/Climbing.fbx",
+"dance_silly": "res://ani/Silly Dancing.fbx",
+"dance_tut": "res://ani/Tut Hip Hop Dance.fbx",
+"fall": "res://ani/Jump Down.fbx",
+"idle": "res://ani/Idle (1).fbx",
+"idle2": "res://ani/idle.fbx",
+"jump": "res://ani/jump.fbx",
+"look": "res://ani/Look Around.fbx",
+"react": "res://ani/Standing Greeting.fbx",
+"run": "res://ani/running.fbx",
+"sit": "res://ani/Sitting.fbx",
+"sit_clap": "res://ani/Sitting Clap.fbx",
+"sit_talk": "res://ani/Sitting Talking.fbx",
+"thankful": "res://ani/Thankful (1).fbx",
+"turn_left": "res://ani/left turn.fbx",
+"turn_right": "res://ani/right turn.fbx",
+"walk": "res://ani/walking.fbx",
+"wave": "res://ani/Wave Hip Hop Dance.fbx",
+"yawn": "res://ani/Yawn.fbx"
+})
+
+[node name="CharacterController" type="Node3D" parent="." unique_id=1246980012]
+script = ExtResource("4_char")
+
+[node name="Aria" parent="CharacterController" unique_id=2061191941 instance=ExtResource("6_aria")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=545117406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+current = true
+projection = 1
+size = 8.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=770177052]
+transform = Transform3D(0.98829234, -0.076286204, 0.13213147, 2.9228604e-09, 0.86602527, 0.50000036, -0.15257232, -0.49414647, 0.8558861, 0, 2, 2.2238975)
+light_energy = 1.2
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=513351530]
+
+[node name="SpeechLabel" type="Label" parent="UI" unique_id=409084042]
+visible = false
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+autowrap_mode = 3

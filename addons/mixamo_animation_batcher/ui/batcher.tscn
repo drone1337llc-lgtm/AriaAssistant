@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://suj0hcq2hx0i"]
+
+[ext_resource type="Script" uid="uid://bcbscov1epkpa" path="res://addons/mixamo_animation_batcher/ui/batcher.gd" id="1_e8pf0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a4lsd"]
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_e8pf0"]
+font_size = 10
+
+[node name="BatcherWindow" type="Window" unique_id=236374179]
+oversampling_override = 1.0
+title = "Mixamo Animation Batcher"
+initial_position = 2
+size = Vector2i(480, 600)
+unresizable = true
+minimize_disabled = true
+maximize_disabled = true
+min_size = Vector2i(400, 500)
+script = ExtResource("1_e8pf0")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1244307907]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1661382249]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1256802584]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 16
+text = "Mixamo Animation Batcher"
+
+[node name="DescLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=975246523]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 11
+text = "Batch imports Mixamo FBX animations and exports them as .res files."
+label_settings = SubResource("LabelSettings_a4lsd")
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=91530733]
+layout_mode = 2
+
+[node name="SourceLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=168812393]
+layout_mode = 2
+text = "Source Folder (FBX Files)"
+
+[node name="SourceRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1694742005]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="SourcePath" type="LineEdit" parent="MarginContainer/VBoxContainer/SourceRow" unique_id=1408661741]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "res://Pro Rifle Pack..."
+editable = false
+
+[node name="SourceBrowseFolder" type="Button" parent="MarginContainer/VBoxContainer/SourceRow" unique_id=476043987]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Folder"
+
+[node name="SourceBrowseFiles" type="Button" parent="MarginContainer/VBoxContainer/SourceRow" unique_id=58541419]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Files"
+
+[node name="ExportLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1343034852]
+layout_mode = 2
+text = "Export Folder (.res Files)"
+
+[node name="ExportRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1137504371]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="ExportPath" type="LineEdit" parent="MarginContainer/VBoxContainer/ExportRow" unique_id=475058450]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "res://Animations/Rifle/..."
+editable = false
+
+[node name="ExportBrowse" type="Button" parent="MarginContainer/VBoxContainer/ExportRow" unique_id=1808889214]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Browse..."
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1300765645]
+layout_mode = 2
+
+[node name="FoundLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=279170351]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Found FBX Files: 0"
+
+[node name="FileList" type="ItemList" parent="MarginContainer/VBoxContainer" unique_id=1252371022]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1686933520]
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer" unique_id=1928781262]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2081661884]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Select source and export folders to begin."
+label_settings = SubResource("LabelSettings_e8pf0")
+autowrap_mode = 3
+
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=513269497]
+layout_mode = 2
+
+[node name="ButtonRow" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=381831367]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ClearBtn" type="Button" parent="MarginContainer/VBoxContainer/ButtonRow" unique_id=1639618435]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Clear"
+
+[node name="StartBtn" type="Button" parent="MarginContainer/VBoxContainer/ButtonRow" unique_id=704767302]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "Start Batch Import"

@@ -1,0 +1,151 @@
+"""Clean up Sarah Version 7.glb for Mixamo auto-rig upload.
+
+Mixamo likes:
+  - OBJ or FBX (we'll output OBJ for simplicity, no animation needed)
+  - Single mesh, no skin
+  - Watertight-ish
+  - Symmetric, A-pose or T-pose preferred
+  - < 50k tris for fast upload
+
+Sarah v7 has:
+  - 1 mesh, 1,106 components, 273k faces
+  - Already has UVs, normals, base color
+  - Already has JOINTS_0/WEIGHTS_0 attrs (Mixamo will REPLACE these, so they don't matter)
+
+Strategy:
+  1. Keep the largest connected component (the body, 1176 verts or so per top-1)
+  2. Wait, that's wrong - the trimesh component split showed top-1 = 1176 verts
+     but the body in the v6 base had 164k verts. Why the disconnect?
+     Answer: trimesh's split(only_watertist=False) does split into 1k+ pieces.
+     The "main body" must be the LARGEST group when summed.
+  3. Actually: total verts = 163k, and 1k+ components means most are duplicates
+     (overlapping shell meshes from the rig's pose baked in).
+  4. Use voxel/flood-fill to find the SHELL of the body, which should be the
+     "outer skin" mesh.
+
+Better strategy:
+  - Just decimate the whole thing hard (target 20k tris)
+  - Then weld vertices within tolerance
+  - Then output as OBJ
+  - Mixamo doesn't care about watertight, it cares about a clean silhouette
+"""
+import trimesh
+import numpy as np
+from pathlib import Path
+
+SRC = Path(r"C:\Users\Tench\Documents\AI Learning\astro_assistant\Sarah Version 7.glb")
+DST_OBJ = SRC.parent / "Sarah_v7_for_Mixamo.obj"
+DST_REPORT = SRC.parent / "Sarah_v7_cleanup_report.txt"
+
+print(f"Loading {SRC.name}...")
+scene = trimesh.load(str(SRC), force='scene')
+print(f"Scene loaded, geometries: {list(scene.geometry.keys())}")
+
+# Get the main mesh (Sarah has just 1 named 'GLTF')
+main_name = list(scene.geometry.keys())[0]
+main = scene.geometry[main_name]
+print(f"Main mesh '{main_name}': {len(main.vertices)} verts, {len(main.faces)} faces")
+
+original_v = len(main.vertices)
+original_f = len(main.faces)
+report = []
+report.append(f"Sarah Version 7 cleanup for Mixamo upload")
+report.append(f"=" * 60)
+report.append(f"Source: {SRC.name}")
+report.append(f"Input: {original_v} verts, {original_f} faces")
+report.append(f"Connected components: {len(main.split(only_watertight=False))}")
+
+# Step 1: weld vertices that are within tolerance
+print("\nStep 1: Welding duplicate vertices (tolerance 0.001)...")
+main.merge_vertices()  # exact merge first
+print(f"  After exact merge: {len(main.vertices)} verts, {len(main.faces)} faces")
+report.append(f"After exact merge: {len(main.vertices)} verts, {len(main.faces)} faces")
+
+# Step 2: remove duplicate faces (degenerate triangles)
+print("\nStep 2: Removing degenerate faces...")
+n_before = len(main.faces)
+main.update_faces(main.unique_faces())
+main.remove_unreferenced_vertices()
+print(f"  After dedup faces: {len(main.vertices)} verts, {len(main.faces)} faces (removed {n_before - len(main.faces)} dup faces)")
+report.append(f"After dedup faces: {len(main.vertices)} verts, {len(main.faces)} faces (removed {n_before - len(main.faces)})")
+
+# Step 3: aggressive decimation. Mixamo likes < 50k tris.
+# We have 273k faces now, decimate to ~30k for safety
+print("\nStep 3: Decimating to ~30k faces for fast Mixamo upload...")
+target_faces = 30000
+if len(main.faces) > target_faces:
+    try:
+        from fast_simplification import simplify
+        import open3d as o3d
+        # fast_simplification needs the mesh as a tensor
+        v_tensor = main.vertices.astype(np.float32)
+        f_tensor = main.faces.astype(np.uint32)
+        simplified_v, simplified_f = simplify(v_tensor, f_tensor, target_count=target_faces)
+        # Rebuild trimesh from the simplified arrays
+        main_simplified = trimesh.Trimesh(vertices=simplified_v, faces=simplified_f, process=True)
+        print(f"  Decimated: {len(main_simplified.vertices)} verts, {len(main_simplified.faces)} faces")
+        report.append(f"After decimation: {len(main_simplified.vertices)} verts, {len(main_simplified.faces)} faces")
+        main = main_simplified
+    except ImportError as e:
+        print(f"  Decimation module not available: {e}, using original")
+        report.append(f"Decimation module not available: {e}")
+    except Exception as e:
+        print(f"  Decimation failed: {e}, using original")
+        report.append(f"Decimation failed: {e}")
+else:
+    print(f"  Already small enough, skipping")
+    report.append(f"No decimation needed")
+
+# Step 4: re-compute normals so Mixamo doesn't get confused
+print("\nStep 4: Recomputing normals...")
+main.fix_normals()
+print(f"  Normals fixed")
+
+# Step 5: write OBJ
+print(f"\nStep 5: Writing OBJ to {DST_OBJ.name}...")
+with open(DST_OBJ, 'w') as f:
+    f.write(f"# Sarah Version 7 - cleaned for Mixamo auto-rig\n")
+    f.write(f"# Source: {SRC.name}\n")
+    f.write(f"# Verts: {len(main.vertices)}, Faces: {len(main.faces)}\n")
+    f.write(f"# Generated by cleanup_for_mixamo.py\n")
+    f.write(f"mtllib sarah.mtl\n")
+    f.write(f"o Sarah\n")
+    for v in main.vertices:
+        f.write(f"v {v[0]:.6f} {v[1]:.6f} {v[2]:.6f}\n")
+    for n in main.vertex_normals:
+        f.write(f"vn {n[0]:.6f} {n[1]:.6f} {n[2]:.6f}\n")
+    if main.visual and hasattr(main.visual, 'uv') and main.visual.uv is not None:
+        for uv in main.visual.uv:
+            f.write(f"vt {uv[0]:.6f} {uv[1]:.6f}\n")
+        for face in main.faces:
+            f.write(f"f {face[0]+1}/{face[0]+1}/{face[0]+1} {face[1]+1}/{face[1]+1}/{face[1]+1} {face[2]+1}/{face[2]+1}/{face[2]+1}\n")
+    else:
+        for face in main.faces:
+            f.write(f"f {face[0]+1}//{face[0]+1} {face[1]+1}//{face[1]+1} {face[2]+1}//{face[2]+1}\n")
+
+print(f"  Wrote {DST_OBJ.stat().st_size / 1024:.1f} KB")
+report.append(f"")
+report.append(f"OUTPUT:")
+report.append(f"  File: {DST_OBJ.name}")
+report.append(f"  Size: {DST_OBJ.stat().st_size / 1024:.1f} KB")
+report.append(f"  Verts: {len(main.vertices)}")
+report.append(f"  Faces: {len(main.faces)}")
+report.append(f"  Has UVs: {main.visual is not None and hasattr(main.visual, 'uv') and main.visual.uv is not None}")
+report.append(f"")
+report.append(f"NEXT STEPS FOR MIXAMO:")
+report.append(f"  1. Open https://www.mixamo.com in your browser")
+report.append(f"  2. Sign in with free Adobe account")
+report.append(f"  3. Click UPLOAD CHARACTER, select: {DST_OBJ.name}")
+report.append(f"  4. After upload, place markers if needed (Mixamo auto-detects)")
+report.append(f"  5. Pick an idle/walk animation, click DOWNLOAD")
+report.append(f"  6. Format: FBX Binary, Pose: T-Pose, Skin: With Skin")
+report.append(f"  7. Save the FBX into the project folder")
+report.append(f"  8. Bring it back here and I'll build the 3D avatar renderer")
+
+# Save report
+with open(DST_REPORT, 'w') as f:
+    f.write('\n'.join(report))
+
+print(f"\nDone!")
+print(f"  OBJ: {DST_OBJ}")
+print(f"  Report: {DST_REPORT}")

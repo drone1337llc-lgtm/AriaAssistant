@@ -1,0 +1,41 @@
+# anim_curator.log — one-line per curator action
+# Each entry: [<ISO-8601 ts>] <event> action=<X> ... details
+# Created by astro_assistant/curator.py on first write.
+[2026-06-16T06:40:54+00:00] start action=sneak max_results=1 reason=test urgency=normal
+[2026-06-16T06:40:54+00:00] no_results action=sneak queries_tried=3
+[2026-06-16T06:41:30+00:00] start action=sneak max_results=1 reason=test urgency=normal
+[2026-06-16T06:41:30+00:00] no_results action=sneak queries_tried=3
+[2026-06-16T07:09:09+00:00] start action=sneak max_results=1 reason=test urgency=normal
+[2026-06-16T07:09:09+00:00] no_results action=sneak queries_tried=3
+[2026-06-16T07:09:11+00:00] start action=walk max_results=1 reason=verify integration urgency=normal
+[2026-06-16T07:09:11+00:00] no_results action=walk queries_tried=3
+[2026-06-16T11:39:24+00:00] start action=walk max_results=1 reason=verify integration end-to-end urgency=normal
+[2026-06-16T11:39:24+00:00] no_results action=walk queries_tried=3
+[2026-06-16T16:22:12+00:00] start action=walk max_results=1 reason=verify integration end-to-end urgency=normal
+[2026-06-16T16:22:12+00:00] no_results action=walk queries_tried=3
+[2026-06-16T17:57:13+00:00] start action=walk max_results=1 reason=verify integration end-to-end urgency=normal
+[2026-06-16T17:57:13+00:00] no_results action=walk queries_tried=3
+[2026-06-16T18:03:59+00:00] start action=walk max_results=1 reason=verify integration end-to-end urgency=normal
+[2026-06-16T18:04:00+00:00] bad_content action=walk head=3c21444f43545950 url=https://sketchfab.com/3d-models/animated-walking-fbx-4891d518da8545d8ba04dd657e64522a
+[2026-06-16T18:04:01+00:00] bad_content action=walk head=3c21444f43545950 url=https://sketchfab.com/3d-models/walking-fbx-model-9b65ae8de56d47469c6860689603a09f
+[2026-06-16T18:04:01+00:00] skip_url action=walk reason=not a direct asset url url=https://music.163.com/song?id=1886741914
+[2026-06-16T18:04:01+00:00] skip_url action=walk reason=not a direct asset url url=https://www.rokoko.com/resources/rokoko-mocap-16-free-walk-and-run-cycle-animations
+[2026-06-16T18:04:01+00:00] skip_url action=walk reason=not a direct asset url url=https://free3d.com/3d-models/animated-fbx
+[2026-06-16T18:04:01+00:00] skip_url action=walk reason=not a direct asset url url=https://free3d.com/3d-models/rigged-fbx
+[2026-06-16T18:04:01+00:00] skip_url action=walk reason=not a direct asset url url=https://51edu.com/game/72.73MB
+[2026-06-16T18:04:01+00:00] skip_url action=walk reason=not a direct asset url url=https://actorcore.reallusion.com/3d-motion/free
+[2026-06-16T18:04:01+00:00] skip_url action=walk reason=not a direct asset url url=http://www.rax.com/web/product/2017-2-22/169.html
+[2026-06-16T18:04:01+00:00] skip_url action=walk reason=not a direct asset url url=https://www.cgtrader.com/3d-models/walk
+[2026-06-16T18:04:01+00:00] nothing_downloaded action=walk skipped=10
+[2026-06-16T18:38:28+00:00] start action=sneak max_results=1 reason=final integration smoke test urgency=normal
+[2026-06-16T18:38:29+00:00] bad_content action=sneak head=3c21444f43545950 url=https://sketchfab.com/features/free-3d-models
+[2026-06-16T18:38:29+00:00] skip_url action=sneak reason=not a direct asset url url=https://www.flightclub.cn/m2/home/news/36178
+[2026-06-16T18:38:29+00:00] skip_url action=sneak reason=not a direct asset url url=https://www.ebay.com/itm/235852537928
+[2026-06-16T18:38:29+00:00] skip_url action=sneak reason=not a direct asset url url=http://mt.sohu.com/20170419/n489444809.shtml
+[2026-06-16T18:38:29+00:00] skip_url action=sneak reason=not a direct asset url url=https://free3d.com/3d-models/fbx
+[2026-06-16T18:38:29+00:00] skip_url action=sneak reason=not a direct asset url url=https://www.meshy.ai/tags/stealth
+[2026-06-16T18:38:29+00:00] skip_url action=sneak reason=not a direct asset url url=https://www.youtube.com/watch?v=3EQXo3VhIsg
+[2026-06-16T18:38:29+00:00] skip_url action=sneak reason=not a direct asset url url=https://renderpeople.com/free-3d-people/?srsltid=AfmBOoqlYWyO3hC7TEMEINbyhQMaJv1yy88qC8FfwAPQaCYPko2OADz9
+[2026-06-16T18:38:29+00:00] skip_url action=sneak reason=not a direct asset url url=https://free3d.com/ja/3d-model/sport-car-304787.html
+[2026-06-16T18:38:29+00:00] skip_url action=sneak reason=not a direct asset url url=https://www.55haitao.com/deals/618274.html
+[2026-06-16T18:38:29+00:00] nothing_downloaded action=sneak skipped=10

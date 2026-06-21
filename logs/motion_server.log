@@ -1,0 +1,33 @@
+2026-06-17 10:39:54,439 [INFO] motion_server: motion library path: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\astro_assistant\motion_library.json (watchdog every 60s)
+2026-06-17 10:39:54,442 [INFO] motion_server: library reloaded: 752 animations (was 0) — C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\astro_assistant\motion_library.json
+2026-06-17 10:39:54,443 [INFO] motion_server: library loaded: 752 animations
+library loaded: 752 animations
+2026-06-17 10:39:54,443 [INFO] motion_server: worker started (capacity=100, model=ShandaAI/FloodDiffusion, fps=30)
+2026-06-17 10:39:54,443 [INFO] motion_server: loading model ShandaAI/FloodDiffusion …
+2026-06-17 10:39:54,444 [INFO] motion_server: curator worker started
+2026-06-17 10:39:54,452 [INFO] motion_server: HTTP server listening on http://0.0.0.0:8766 (POST /motion, /motion/status, /curator; GET /motion/get, /motion/cap, /healthz, /library, /curator/status)
+2026-06-17 10:39:55,732 [INFO] flood_loader: FloodDiffusion snapshot: C:\Users\Tench\.cache\huggingface\hub\models--ShandaAI--FloodDiffusion\snapshots\b70b9d7e7e7002eec136bf763245d76361fcf4a1
+2026-06-17 10:39:58,070 [INFO] flood_loader: loading FloodDiffusion weights from C:\Users\Tench\.cache\huggingface\hub\models--ShandaAI--FloodDiffusion\snapshots\b70b9d7e7e7002eec136bf763245d76361fcf4a1 ...
+INFO: Seed set to 1234
+2026-06-17 10:39:59,728 [INFO] lightning.fabric.utilities.seed: Seed set to 1234
+Loaded VAE model from C:\Users\Tench\.cache\huggingface\hub\models--ShandaAI--FloodDiffusion\snapshots\b70b9d7e7e7002eec136bf763245d76361fcf4a1\vae.safetensors
+Only in state_dict (not in parameters): ['mean', 'std']
+Total state_dict items: 108
+Total named_parameters: 106
+Total named_buffers: 2
+2026-06-17 10:40:32,264 [INFO] root: loading C:\Users\Tench\.cache\huggingface\hub\models--ShandaAI--FloodDiffusion\snapshots\b70b9d7e7e7002eec136bf763245d76361fcf4a1\ldf_deps/t5_umt5-xxl-enc-bf16/models_t5_umt5-xxl-enc-bf16.pth
+Loaded model from C:\Users\Tench\.cache\huggingface\hub\models--ShandaAI--FloodDiffusion\snapshots\b70b9d7e7e7002eec136bf763245d76361fcf4a1\model.safetensors
+All parameters match between state_dict and named_parameters
+Total state_dict items: 231
+Total named_parameters: 231
+Total named_buffers: 0
+2026-06-17 10:40:38,827 [INFO] flood_loader: weights loaded
+2026-06-17 10:40:38,829 [INFO] flood_loader: FloodDiffusion ready on cuda, vram_alloc=0.53 GB
+2026-06-17 10:40:38,830 [INFO] motion_server: model on GPU
+2026-06-17 10:40:38,830 [INFO] motion_server: model loaded
+2026-06-17 10:41:11,000 [INFO] motion_server: ENQUEUE [fc05f30efdd0] prompt='A person standing and breathing gently' frames=30 (depth now 1)
+2026-06-17 10:41:11,001 [INFO] motion_server: [fc05f30efdd0] START prompt='A person standing and breathing gently' frames=30 (queue waited 0.0s) — library context: 752 animations
+C:\Users\Tench\.cache\huggingface\hub\models--ShandaAI--FloodDiffusion\snapshots\b70b9d7e7e7002eec136bf763245d76361fcf4a1\ldf_models\tools\attention.py:174: UserWarning: Padding mask is disabled when using scaled_dot_product_attention. It can have a significant impact on performance.
+  warnings.warn(
+2026-06-17 10:41:16,850 [INFO] motion_server: [fc05f30efdd0] DONE in 5.8s (animation name=breath_test, bones=21)
+The batch file cannot be found.

@@ -1,0 +1,103 @@
+{
+  "value": 5,
+  "last_interaction": "2026-06-17T23:47:30.487201Z",
+  "history": [
+    {
+      "ts": "2026-06-17T20:45:08.176802Z",
+      "value": 3.5,
+      "reason": "engaged_question",
+      "delta": 0.5
+    },
+    {
+      "ts": "2026-06-17T21:07:16.200945Z",
+      "value": 4.0,
+      "reason": "engaged_question",
+      "delta": 0.5
+    },
+    {
+      "ts": "2026-06-17T21:29:00.781327Z",
+      "value": 4.5,
+      "reason": "engaged_question",
+      "delta": 0.5
+    },
+    {
+      "ts": "2026-06-17T21:30:52.965213Z",
+      "value": 5,
+      "reason": "engaged_question",
+      "delta": 0.5
+    },
+    {
+      "ts": "2026-06-17T22:29:30.828859Z",
+      "value": 5,
+      "reason": "engaged_question",
+      "delta": 0.5
+    },
+    {
+      "ts": "2026-06-17T22:29:31.656747Z",
+      "value": 5,
+      "reason": "engaged_question",
+      "delta": 0.5
+    },
+    {
+      "ts": "2026-06-17T22:29:32.047884Z",
+      "value": 5,
+      "reason": "engaged_question",
+      "delta": 0.5
+    },
+    {
+      "ts": "2026-06-17T22:29:32.418644Z",
+      "value": 5,
+      "reason": "engaged_question",
+      "delta": 0.5
+    },
+    {
+      "ts": "2026-06-17T22:30:02.172584Z",
+      "value": 5,
+      "reason": "engaged_question",
+      "delta": 0.5
+    },
+    {
+      "ts": "2026-06-17T22:30:02.824444Z",
+      "value": 5,
+      "reason": "engaged_question",
+      "delta": 0.5
+    },
+    {
+      "ts": "2026-06-17T22:30:03.279864Z",
+      "value": 5,
+      "reason": "engaged_question",
+      "delta": 0.5
+    },
+    {
+      "ts": "2026-06-17T22:30:03.665806Z",
+      "value": 5,
+      "reason": "engaged_question",
+      "delta": 0.5
+    },
+    {
+      "ts": "2026-06-17T22:30:33.970946Z",
+      "value": 5,
+      "reason": "engaged_question",
+      "delta": 0.5
+    },
+    {
+      "ts": "2026-06-17T22:30:34.587989Z",
+      "value": 5,
+      "reason": "engaged_question",
+      "delta": 0.5
+    },
+    {
+      "ts": "2026-06-17T22:30:35.011665Z",
+      "value": 5,
+      "reason": "engaged_question",
+      "delta": 0.5
+    },
+    {
+      "ts": "2026-06-17T22:30:35.428502Z",
+      "value": 5,
+      "reason": "engaged_question",
+      "delta": 0.5
+    }
+  ],
+  "decay_started_at": null
+}

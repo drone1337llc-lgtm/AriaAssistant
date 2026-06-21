@@ -1,0 +1,53 @@
+/* ===========================================================================
+   Aria Assistant — Typography tokens
+   =========================================================================== */
+
+:root {
+  /* Families */
+  --font-display: 'Shippori Mincho', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  --font-ui:      'Zen Kaku Gothic New', 'Hiragino Sans', 'Yu Gothic', system-ui, sans-serif;
+  --font-soft:    'Zen Maru Gothic', 'Zen Kaku Gothic New', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  /* Type scale */
+  --text-xs:    12px;
+  --text-sm:    13px;
+  --text-base:  15px;
+  --text-md:    17px;
+  --text-lg:    21px;
+  --text-xl:    27px;
+  --text-2xl:   36px;
+  --text-3xl:   48px;
+  --text-display: 68px;
+
+  /* Weights */
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+  --weight-extrabold: 800;
+  --weight-black:     900;
+
+  /* Line height */
+  --leading-tight:   1.12;
+  --leading-snug:    1.3;
+  --leading-normal:  1.6;
+  --leading-relaxed: 1.8;
+
+  /* Letter spacing */
+  --tracking-tight:  -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.06em;
+  --tracking-label:  0.2em;   /* uppercase mincho / mono micro-labels */
+
+  /* Semantic roles */
+  --type-display-family: var(--font-display);
+  --type-display-weight: var(--weight-bold);
+  --type-heading-family: var(--font-display);
+  --type-heading-weight: var(--weight-semibold);
+  --type-body-family:    var(--font-ui);
+  --type-body-weight:    var(--weight-regular);
+  --type-soft-family:    var(--font-soft);
+  --type-label-family:   var(--font-mono);
+  --type-label-weight:   var(--weight-medium);
+}

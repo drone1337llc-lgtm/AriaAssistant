@@ -1,0 +1,50 @@
+param (
+    # Add -Editor when running the script to force opening in Editor mode
+    # Example: .\Start-Aria.ps1 -Editor
+    [switch]$Editor
+)
+
+# 1. Self-Elevate to Run as Administrator
+if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+    Write-Warning "[Aria] Requesting Administrator privileges..."
+    $Arguments = "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`""
+    if ($Editor) { $Arguments += " -Editor" }
+    Start-Process powershell -ArgumentList $Arguments -Verb RunAs
+    exit
+}
+
+# 2. Define Shared Variables
+$ProjectDir = "C:\Users\Tench\Documents\AriaAssistant"
+$GodotExe   = "C:\Users\Tench\AppData\Local\Programs\Godot\Godot_v4.6.3_mono_win64.exe"
+
+Write-Host "========================================"
+Write-Host "       Starting Aria Assistant          "
+Write-Host "========================================"
+
+# 3. Launch Astro Assistant Client in a new window
+Write-Host "[Aria] Starting Astro Assistant Client..."
+$ClientCommand = "Set-Location -Path '$ProjectDir'; .\.venv\Scripts\Activate.ps1; Set-Location -Path 'astro_assistant'; python client.py --server ws://192.168.68.88:8765"
+Start-Process powershell -ArgumentList "-NoLogo", "-NoExit", "-ExecutionPolicy", "Bypass", "-Command", $ClientCommand
+
+# 4. Launch TTS Server in a new window
+Write-Host "[Aria] Starting TTS Server..."
+$TtsCommand = "Set-Location -Path '$ProjectDir'; .\.venv\Scripts\Activate.ps1; Set-Location -Path 'Coqui-TTS-XTTS-v2-\scripts'; python tts_server_jessica.py"
+Start-Process powershell -ArgumentList "-NoLogo", "-NoExit", "-ExecutionPolicy", "Bypass", "-Command", $TtsCommand
+
+# 6. Launch Godot / Exported Game
+if ($Editor) {
+    Write-Host "[Aria] Opening Godot editor..."
+    Start-Process -FilePath $GodotExe -ArgumentList "--editor", "--path", "$ProjectDir"
+} else {
+    Write-Host "[Aria] Launching Aria (exported game)..."
+    $ExportExe = "$ProjectDir\export\Aria.exe"
+    
+    if (Test-Path $ExportExe) {
+        Start-Process -FilePath $ExportExe
+    } else {
+        Write-Host "[Aria] No export found at $ExportExe; opening editor instead."
+        Start-Process -FilePath $GodotExe -ArgumentList "--editor", "--path", "$ProjectDir"
+    }
+}
+
+Write-Host "[Aria] Startup sequence complete!"

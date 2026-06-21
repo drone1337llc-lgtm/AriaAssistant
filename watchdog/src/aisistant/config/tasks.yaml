@@ -1,0 +1,117 @@
+# Aria autonomous backend crew — task definitions.
+# Tasks run sequentially: watch → diagnose → fix → verify → learn.
+# Each task's `description` references inputs the Flow passes via kickoff(inputs=...).
+# All tasks use output_pydantic for structured downstream consumption.
+
+watch_task:
+  description: >
+    Poll every service in services.yaml once and tail aria_health.log for any new error lines
+    since the previous tick. For each service call the service_health tool with the service
+    name as input. For aria_health.log call log_tail with path=ARIA_HEALTH_LOG and lines=20.
+
+    Then assemble a WatchReport with:
+    - tick_number: {tick_number}
+    - services_checked: number of services probed
+    - healthy: list of healthy service names
+    - failing: list of FailingService entries (name, error, last_check_iso = now)
+    - warnings: any service whose response was slow (>2s) or returned non-2xx-but-not-error
+    - new_log_lines: lines from aria_health.log that look like errors (contain 'error', 'fail',
+      'crash', 'down', 'timeout', or 'escalate')
+    - escalation_needed: True if any failing service has critical=True
+
+    Inputs available: {tick_number}, {services}, {log_path}, {last_summary}.
+    Return ONLY the JSON WatchReport, no extra prose.
+  expected_output: >
+    A WatchReport JSON object.
+  agent: watcher
+
+diagnose_task:
+  description: >
+    The previous task produced this WatchReport: {watch_report_json}.
+
+    For each failing service:
+    1. Call kb_search with the error text as query and the failing service's name to check
+       whether this has been seen before.
+    2. If you need log context, call log_tail with log_path and a filter_substring that
+       matches the failing service or error keyword.
+    3. Decide on the most likely cause and the action_class:
+       - "restart"  — service is down but the port is free
+       - "kill_process" — port is held by a stale process
+       - "free_port" — port is held but no known owner
+       - "switch_model" — LM Studio returned 400 empty body (model unloaded)
+       - "reconfigure" — config file looks wrong (escalate if uncertain)
+       - "escalate" — anything that needs the human
+
+    Return a JSON list of Diagnosis entries, one per failing service. If there are no
+    failing services, return an empty list.
+  expected_output: >
+    A list of Diagnosis entries (Pydantic), one per failing service. Empty list if all healthy.
+  agent: diagnostician
+  context: [watch_task]
+
+fix_task:
+  description: >
+    Diagnoses to remediate: {diagnoses_json}.
+
+    For each Diagnosis, apply the action_class using the action_executor tool. Construct a
+    single shell command per diagnosis. Examples (do not copy verbatim — adapt):
+    - restart:  no direct restart command; you ESCALATE here. We don't auto-start services.
+    - kill_process:  taskkill /PID <pid> /F  (only if you found a PID via process_list)
+    - free_port:  netstat -ano | findstr :<port>  then taskkill that PID
+    - switch_model:  ESCALATE (requires the user to re-load the model in LM Studio)
+    - reconfigure:  ESCALATE in safe_mode
+    - escalate:  do not execute — just record the escalation
+
+    IMPORTANT safe_mode rules (current value: {safe_mode}):
+    - If safe_mode=True, REFUSE any taskkill / kill / reconfigure action. Escalate instead.
+    - Never run a command that touches files under C:\Users\Tench\Documents\AriaAssistant*\.
+    - Never edit .env or pyproject.toml.
+    - Curl GETs are always safe; taskkill is only safe when safe_mode=False.
+
+    Return a JSON list of ActionRecord entries — one per Diagnosis, including escalations.
+  expected_output: >
+    A list of ActionRecord entries (Pydantic), one per Diagnosis.
+  agent: fixer
+  context: [diagnose_task]
+
+verify_task:
+  description: >
+    Original failing services from the WatchReport: {watch_report_json}.
+    Actions the Fixer took: {actions_json}.
+
+    For each action whose target is a service (not an escalation), re-run service_health
+    with the service name. Compare to the original failing status:
+    - If now ok and previously failing → status="fixed", evidence=service_health output
+    - If still failing → status="still_failing", evidence=new error
+    - If a service that was previously healthy is now failing → status="regressed",
+      evidence=the regression error
+
+    Return a JSON list of VerificationResult entries — only for services the Fixer
+    touched (skip pure escalations).
+  expected_output: >
+    A list of VerificationResult entries (Pydantic) for each touched service.
+  agent: verifier
+  context: [watch_task, fix_task]
+
+learn_task:
+  description: >
+    Inputs:
+    - watch_report_json: {watch_report_json}
+    - diagnoses_json: {diagnoses_json}
+    - actions_json: {actions_json}
+    - verifications_json: {verifications_json}
+    - kb_path: {kb_path}
+
+    For each Diagnosis whose action_class was executed (not "escalate") and whose
+    verification status is "fixed", write ONE KB entry via kb_writer. Construct:
+    - id:  "<service>_<short_symptom_slug>"  (lowercase, snake_case, ≤60 chars)
+    - service, symptom, cause, action, action_class:  from the chain above
+
+    Skip entries that have already been written (kb_writer handles dedup). Skip
+    verifications that are still_failing or regressed (those need a new fix first).
+
+    Return a JSON LearningSummary: { kb_entries_added, kb_entries_skipped, kb_path }.
+  expected_output: >
+    A LearningSummary JSON object (Pydantic).
+  agent: knowledge_manager
+  context: [watch_task, diagnose_task, fix_task, verify_task]

@@ -1,0 +1,65 @@
+/* ===========================================================================
+   Aria Assistant — Spacing, radii, borders, shadows & the MOOD AURA system
+   Warm, soft, paper-and-wood. Nothing cold; nothing harsh.
+   =========================================================================== */
+
+:root {
+  /* Spacing scale (4px base) */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Radii — soft, organic; like worn paper & rounded river stones */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   22px;
+  --radius-2xl:  30px;
+  --radius-pill: 999px;
+  --radius-bubble: 20px;   /* speech bubble */
+
+  /* Borders */
+  --border-width: 1px;
+
+  /* Soft blur (used sparingly — frosted shoji feel) */
+  --blur-soft:  10px;
+
+  /* Elevation — warm, soft, low. Sunlight through paper, not hard drop-shadow */
+  --shadow-xs:    0 1px 2px rgba(74, 46, 28, 0.08);
+  --shadow-sm:    0 2px 8px rgba(74, 46, 28, 0.10);
+  --shadow-card:  0 10px 30px rgba(74, 46, 28, 0.12);
+  --shadow-pop:   0 18px 50px rgba(44, 26, 16, 0.22);
+  --shadow-bubble: 0 8px 24px rgba(74, 46, 28, 0.16);
+  --shadow-inset: inset 0 1px 3px rgba(74, 46, 28, 0.10);
+
+  /* ---------------------------------------------------------------------------
+     MOOD AURA — the signature. A soft warm halo around Aria whose hue tracks
+     her current mood (1–5) and whose spread grows as mood rises. Replaces the
+     old robot "state glow." Gentle, like late-afternoon light, never neon.
+     Pair with the --mood-N color tokens.
+     --------------------------------------------------------------------------- */
+  --aura-1: 0 8px 30px rgba(124, 151, 168, 0.30);   /* resting slate */
+  --aura-2: 0 8px 32px rgba(140, 154, 94, 0.32);    /* calm matcha */
+  --aura-3: 0 9px 36px rgba(232, 185, 107, 0.40);   /* content gold */
+  --aura-4: 0 10px 40px rgba(197, 106, 62, 0.44);   /* warm maple */
+  --aura-5: 0 12px 46px rgba(228, 134, 160, 0.50);  /* delighted sakura */
+
+  /* Focus ring — warm maple halo */
+  --ring-focus: 0 0 0 3px rgba(164, 80, 46, 0.30);
+
+  /* Z layers */
+  --z-base: 0;       /* @kind other */
+  --z-panel: 10;     /* @kind other */
+  --z-bubble: 50;    /* @kind other */
+  --z-overlay: 100;  /* @kind other */
+  --z-menu: 200;     /* @kind other */
+}

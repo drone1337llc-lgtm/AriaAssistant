@@ -1,39 +1,124 @@
-# Aria startup script — launches the Jessica TTS voice server, then runs the Godot export.
-# Run from PowerShell:  .\start_aria.ps1
-# Or to run the editor: .\start_aria.ps1 -Editor
+<#
+.SYNOPSIS
+    One-shot launcher for Aria Assistant.
+    Launches services in individual windows with environment isolation.
+#>
 
-param([switch]$Editor)
+param(
+    [switch]$All,
+    [switch]$WithGodot, [switch]$WithBrain, [switch]$WithTts, [switch]$WithMotion, [switch]$WithDashboard,
+    [switch]$NoGodot,   [switch]$NoBrain,   [switch]$NoTts,   [switch]$NoMotion,   [switch]$NoDashboard,
+    [switch]$Help
+)
 
-$TtsScript  = "C:\Users\Tench\Documents\Coqui-TTS-XTTS-v2-\scripts\tts_server_jessica.py"
-$Python     = "C:\Program Files\Python312\python.exe"
-$GodotExe   = "C:\Users\Tench\AppData\Local\Programs\Godot\Godot_v4.6.3_mono_win64.exe"
-$ProjectDir = "C:\Users\Tench\Documents\AriaAssistant"
+# ── 1. Map flags ────────────────────────────────────────────────────────
+$ExplicitFlags = ($PSBoundParameters.Count -gt 0)
+if (-not $ExplicitFlags) { $All = $true }
+if ($All) { $WithGodot = $true; $WithBrain = $true; $WithTts = $true; $WithMotion = $true; $WithDashboard = $true }
+if ($NoGodot)     { $WithGodot = $false }
+if ($NoBrain)     { $WithBrain = $false }
+if ($NoTts)       { $WithTts = $false }
+if ($NoMotion)    { $WithMotion = $false }
+if ($NoDashboard) { $WithDashboard = $false }
 
-# Start TTS server in a separate window so its GPU log doesn't clutter Aria's output
-Write-Host "[Aria] Starting Jessica TTS voice server (first load ~15s)..."
-$ttsProc = Start-Process -FilePath $Python -ArgumentList $TtsScript `
-    -WorkingDirectory (Split-Path $TtsScript) `
-    -WindowStyle Normal -PassThru
+# ── 2. Admin Elevation ──────────────────────────────────────────────────
+$IsAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+if (-not $IsAdmin) {
+    $argList = @("-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "`"$PSCommandPath`"") + $args
+    Start-Process -FilePath powershell.exe -ArgumentList $argList -Verb RunAs
+    exit 0
+}
 
-Write-Host "[Aria] TTS server PID: $($ttsProc.Id)"
-Write-Host "[Aria] Waiting for model to load..."
-Start-Sleep -Seconds 18  # model takes ~15s; a little extra margin
+# ── 3. Path Setup ───────────────────────────────────────────────────────
+$ProjectDir  = $PSScriptRoot
+$VenvPython  = Join-Path $ProjectDir ".venv\Scripts\python.exe"
+$GodotExe    = "C:\Users\Tench\Documents\Godot_v4.6.3-stable_mono_win64\Godot_v4.6.3-stable_mono_win64\Godot_v4.6.3-stable_mono_win64.exe"
+$GodotProject = Join-Path $ProjectDir "aria"
+$BrainExe    = Join-Path $ProjectDir "brain\.venv\Scripts\aria_brain.exe"
 
-if ($Editor) {
-    Write-Host "[Aria] Opening Godot editor..."
-    Start-Process -FilePath $GodotExe -ArgumentList "--editor", "--path", $ProjectDir
+# ── 3a. FFmpeg shared DLLs (for torchcodec in TTS / motion_server) ─────
+# torchcodec (pulled in by torchaudio 2.11+ when used by coqui-tts[codec])
+# needs FFmpeg 8 shared DLLs (avcodec-62.dll etc.) on PATH at process start.
+# We ship them in tools\ffmpeg-shared\bin so the project is self-contained.
+$FfmpegBin = Join-Path $ProjectDir "tools\ffmpeg-shared\bin"
+if (Test-Path $FfmpegBin) {
+    $env:Path = "$FfmpegBin;$env:Path"
 } else {
-    Write-Host "[Aria] Launching Aria (exported game)..."
-    # If you've exported: set this to the .exe path.  Otherwise open the editor.
-    $ExportExe = "$ProjectDir\export\Aria.exe"
-    if (Test-Path $ExportExe) {
-        Start-Process -FilePath $ExportExe
+    Write-Host "[Aria] WARN: $FfmpegBin not found. If TTS fails to load speaker latents, install FFmpeg 8 shared and put the bin on PATH." -ForegroundColor Yellow
+}
+
+# ── 4. Helper: Launch in new Window ─────────────────────────────────────
+function Launch-InWindow {
+    param($Title, $WorkingDir, $Command)
+    
+    $tmpBat = Join-Path $env:TEMP ("aria_" + [Guid]::NewGuid().ToString().Substring(0,8) + ".bat")
+    
+    # We add an explicit override for the audio backend
+    $batContent = @"
+@echo off
+cd /d "$WorkingDir"
+set TORCHAUDIO_USE_TORCHCODEC=0
+set TORCHAUDIO_BACKEND=soundfile
+echo [Aria] Starting $Title...
+"$VenvPython" $Command
+echo [Aria] Process exited.
+pause
+"@
+    $batContent | Out-File -FilePath $tmpBat -Encoding ascii
+    Start-Process -FilePath cmd.exe -ArgumentList "/c start `"$Title`" `"$tmpBat`"" -WindowStyle Normal
+}
+
+# ── 5. Launch services ──────────────────────────────────────────────────
+Write-Host "[Aria] Initializing services..." -ForegroundColor Green
+
+if ($WithBrain) {
+    if (Test-Path $BrainExe) {
+        $tmpBat = Join-Path $env:TEMP ("aria_brain_" + [Guid]::NewGuid().ToString().Substring(0,8) + ".bat")
+        @"
+@echo off
+cd /d "$(Join-Path $ProjectDir 'brain')"
+echo [Aria] Starting Brain server...
+"$BrainExe"
+echo [Aria] Brain exited.
+pause
+"@ | Out-File -FilePath $tmpBat -Encoding ascii
+        Start-Process -FilePath cmd.exe -ArgumentList "/c start `"Aria Brain`" `"$tmpBat`"" -WindowStyle Normal
+        Write-Host "[Aria] Brain server launching..." -ForegroundColor Cyan
     } else {
-        Write-Host "[Aria] No export found at $ExportExe; opening editor instead."
-        Start-Process -FilePath $GodotExe -ArgumentList "--editor", "--path", $ProjectDir
+        Write-Host "[Aria] WARN: Brain exe not found at $BrainExe" -ForegroundColor Yellow
     }
 }
 
-Write-Host "[Aria] Started. Press Ctrl+C to stop the TTS server."
-try { Wait-Process -Id $ttsProc.Id }
-catch { Write-Host "[Aria] TTS server exited." }
+if ($WithGodot) {
+    if (Test-Path $GodotExe) {
+        # Launch Godot with the project path — runs the game directly (no editor UI).
+        # Pass --verbose so startup errors appear in the Godot console.
+        Start-Process -FilePath $GodotExe -ArgumentList "--path `"$GodotProject`" --verbose"
+        Write-Host "[Aria] Godot launching ($GodotProject)..." -ForegroundColor Cyan
+    } else {
+        Write-Host "[Aria] WARN: Godot not found at $GodotExe" -ForegroundColor Yellow
+    }
+}
+
+if ($WithTts) {
+    $TtsScript = Join-Path $ProjectDir "Coqui-TTS-XTTS-v2-\scripts\tts_server_jessica.py"
+    if (Test-Path $TtsScript) {
+        Launch-InWindow "Aria TTS" (Split-Path $TtsScript) "tts_server_jessica.py --port 5003"
+    }
+}
+
+if ($WithMotion) {
+    $MotionScript = Join-Path $ProjectDir "astro_assistant\motion_server.py"
+    if (Test-Path $MotionScript) {
+        Launch-InWindow "Aria Motion" (Split-Path $MotionScript) "motion_server.py --port 8766 --preload"
+    }
+}
+
+if ($WithDashboard) {
+    $DashScript = Join-Path $ProjectDir "astro_assistant\dashboard.py"
+    if (Test-Path $DashScript) {
+        Launch-InWindow "Aria Dashboard" (Split-Path $DashScript) "dashboard.py"
+    }
+}
+
+Write-Host "[Aria] Startup script complete. Check launched windows for errors." -ForegroundColor Yellow

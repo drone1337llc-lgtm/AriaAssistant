@@ -1,0 +1,288 @@
+2026-06-20T08:19:27	=== Aria PC2 supervisor starting (interval 15s) ===
+2026-06-20T08:19:27	[brain] started pid=19620
+2026-06-20T08:19:29	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:19:31	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:19:48	[tts_server] not running - restarting
+2026-06-20T08:19:48	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:19:48	[motion_server] not running - restarting
+2026-06-20T08:19:48	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:20:03	[tts_server] not running - restarting
+2026-06-20T08:20:03	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:20:03	[motion_server] not running - restarting
+2026-06-20T08:20:03	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:20:18	[tts_server] not running - restarting
+2026-06-20T08:20:18	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:20:18	[motion_server] not running - restarting
+2026-06-20T08:20:18	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:20:33	[tts_server] not running - restarting
+2026-06-20T08:20:33	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:20:33	[motion_server] not running - restarting
+2026-06-20T08:20:33	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:20:48	[tts_server] not running - restarting
+2026-06-20T08:20:48	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:20:48	[motion_server] not running - restarting
+2026-06-20T08:20:48	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:21:03	[tts_server] not running - restarting
+2026-06-20T08:21:03	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:21:03	[motion_server] not running - restarting
+2026-06-20T08:21:03	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:21:18	[tts_server] not running - restarting
+2026-06-20T08:21:18	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:21:18	[motion_server] not running - restarting
+2026-06-20T08:21:18	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:21:33	[tts_server] not running - restarting
+2026-06-20T08:21:33	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:21:33	[motion_server] not running - restarting
+2026-06-20T08:21:33	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:21:48	[tts_server] not running - restarting
+2026-06-20T08:21:48	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:21:48	[motion_server] not running - restarting
+2026-06-20T08:21:48	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:22:03	[tts_server] not running - restarting
+2026-06-20T08:22:03	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:22:03	[motion_server] not running - restarting
+2026-06-20T08:22:03	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:22:18	[tts_server] not running - restarting
+2026-06-20T08:22:18	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:22:18	[motion_server] not running - restarting
+2026-06-20T08:22:18	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:22:33	[tts_server] not running - restarting
+2026-06-20T08:22:33	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:22:33	[motion_server] not running - restarting
+2026-06-20T08:22:33	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:22:48	[tts_server] not running - restarting
+2026-06-20T08:22:48	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:22:48	[motion_server] not running - restarting
+2026-06-20T08:22:48	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:23:03	[tts_server] not running - restarting
+2026-06-20T08:23:03	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:23:03	[motion_server] not running - restarting
+2026-06-20T08:23:03	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:23:18	[tts_server] not running - restarting
+2026-06-20T08:23:18	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:23:18	[motion_server] not running - restarting
+2026-06-20T08:23:18	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:23:33	[tts_server] not running - restarting
+2026-06-20T08:23:33	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:23:33	[motion_server] not running - restarting
+2026-06-20T08:23:33	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:23:48	[tts_server] not running - restarting
+2026-06-20T08:23:48	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:23:48	[motion_server] not running - restarting
+2026-06-20T08:23:48	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:24:03	[tts_server] not running - restarting
+2026-06-20T08:24:03	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:24:03	[motion_server] not running - restarting
+2026-06-20T08:24:03	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:24:18	[tts_server] not running - restarting
+2026-06-20T08:24:18	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:24:18	[motion_server] not running - restarting
+2026-06-20T08:24:18	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:24:34	[tts_server] not running - restarting
+2026-06-20T08:24:34	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:24:34	[motion_server] not running - restarting
+2026-06-20T08:24:34	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:24:49	[tts_server] not running - restarting
+2026-06-20T08:24:49	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:24:49	[motion_server] not running - restarting
+2026-06-20T08:24:49	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:25:04	[tts_server] not running - restarting
+2026-06-20T08:25:04	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:25:04	[motion_server] not running - restarting
+2026-06-20T08:25:04	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:25:19	[tts_server] not running - restarting
+2026-06-20T08:25:19	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:25:19	[motion_server] not running - restarting
+2026-06-20T08:25:19	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:25:34	[tts_server] not running - restarting
+2026-06-20T08:25:34	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:25:34	[motion_server] not running - restarting
+2026-06-20T08:25:34	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:25:49	[tts_server] not running - restarting
+2026-06-20T08:25:49	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:25:49	[motion_server] not running - restarting
+2026-06-20T08:25:49	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:26:04	[tts_server] not running - restarting
+2026-06-20T08:26:04	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:26:04	[motion_server] not running - restarting
+2026-06-20T08:26:04	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:26:19	[tts_server] not running - restarting
+2026-06-20T08:26:19	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:26:19	[motion_server] not running - restarting
+2026-06-20T08:26:19	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:26:34	[tts_server] not running - restarting
+2026-06-20T08:26:34	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:26:34	[motion_server] not running - restarting
+2026-06-20T08:26:34	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:26:49	[tts_server] not running - restarting
+2026-06-20T08:26:49	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:26:49	[motion_server] not running - restarting
+2026-06-20T08:26:49	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:27:04	[tts_server] not running - restarting
+2026-06-20T08:27:04	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:27:04	[motion_server] not running - restarting
+2026-06-20T08:27:04	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:27:19	[tts_server] not running - restarting
+2026-06-20T08:27:19	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:27:19	[motion_server] not running - restarting
+2026-06-20T08:27:19	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:27:34	[tts_server] not running - restarting
+2026-06-20T08:27:34	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:27:34	[motion_server] not running - restarting
+2026-06-20T08:27:34	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:27:49	[tts_server] not running - restarting
+2026-06-20T08:27:49	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:27:49	[motion_server] not running - restarting
+2026-06-20T08:27:49	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:28:04	[tts_server] not running - restarting
+2026-06-20T08:28:04	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:28:04	[motion_server] not running - restarting
+2026-06-20T08:28:04	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:28:19	[tts_server] not running - restarting
+2026-06-20T08:28:19	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:28:19	[motion_server] not running - restarting
+2026-06-20T08:28:19	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:28:34	[tts_server] not running - restarting
+2026-06-20T08:28:34	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:28:34	[motion_server] not running - restarting
+2026-06-20T08:28:34	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:28:49	[tts_server] not running - restarting
+2026-06-20T08:28:49	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:28:49	[motion_server] not running - restarting
+2026-06-20T08:28:49	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:29:04	[tts_server] not running - restarting
+2026-06-20T08:29:04	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:29:04	[motion_server] not running - restarting
+2026-06-20T08:29:04	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:29:19	[tts_server] not running - restarting
+2026-06-20T08:29:19	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:29:19	[motion_server] not running - restarting
+2026-06-20T08:29:19	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:29:34	[tts_server] not running - restarting
+2026-06-20T08:29:34	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:29:34	[motion_server] not running - restarting
+2026-06-20T08:29:34	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:29:49	[tts_server] not running - restarting
+2026-06-20T08:29:49	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:29:49	[motion_server] not running - restarting
+2026-06-20T08:29:49	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:30:04	[tts_server] not running - restarting
+2026-06-20T08:30:04	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:30:04	[motion_server] not running - restarting
+2026-06-20T08:30:04	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:30:19	[tts_server] not running - restarting
+2026-06-20T08:30:19	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:30:19	[motion_server] not running - restarting
+2026-06-20T08:30:19	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:30:34	[tts_server] not running - restarting
+2026-06-20T08:30:34	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:30:34	[motion_server] not running - restarting
+2026-06-20T08:30:34	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:30:49	[tts_server] not running - restarting
+2026-06-20T08:30:49	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:30:49	[motion_server] not running - restarting
+2026-06-20T08:30:49	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:31:04	[tts_server] not running - restarting
+2026-06-20T08:31:04	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:31:04	[motion_server] not running - restarting
+2026-06-20T08:31:04	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:31:19	[tts_server] not running - restarting
+2026-06-20T08:31:19	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:31:19	[motion_server] not running - restarting
+2026-06-20T08:31:19	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:31:34	[tts_server] not running - restarting
+2026-06-20T08:31:34	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:31:34	[motion_server] not running - restarting
+2026-06-20T08:31:34	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:31:49	[tts_server] not running - restarting
+2026-06-20T08:31:49	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:31:49	[motion_server] not running - restarting
+2026-06-20T08:31:49	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:32:04	[tts_server] not running - restarting
+2026-06-20T08:32:04	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:32:04	[motion_server] not running - restarting
+2026-06-20T08:32:04	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:32:19	[tts_server] not running - restarting
+2026-06-20T08:32:19	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:32:19	[motion_server] not running - restarting
+2026-06-20T08:32:19	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:32:34	[tts_server] not running - restarting
+2026-06-20T08:32:34	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:32:34	[motion_server] not running - restarting
+2026-06-20T08:32:34	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:32:49	[tts_server] not running - restarting
+2026-06-20T08:32:49	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:32:49	[motion_server] not running - restarting
+2026-06-20T08:32:49	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:33:04	[tts_server] not running - restarting
+2026-06-20T08:33:04	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:33:04	[motion_server] not running - restarting
+2026-06-20T08:33:04	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:33:19	[tts_server] not running - restarting
+2026-06-20T08:33:19	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:33:19	[motion_server] not running - restarting
+2026-06-20T08:33:19	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:33:34	[tts_server] not running - restarting
+2026-06-20T08:33:34	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:33:34	[motion_server] not running - restarting
+2026-06-20T08:33:34	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:33:49	[tts_server] not running - restarting
+2026-06-20T08:33:49	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:33:49	[motion_server] not running - restarting
+2026-06-20T08:33:49	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:34:04	[tts_server] not running - restarting
+2026-06-20T08:34:04	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:34:04	[motion_server] not running - restarting
+2026-06-20T08:34:04	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:34:19	[tts_server] not running - restarting
+2026-06-20T08:34:19	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:34:19	[motion_server] not running - restarting
+2026-06-20T08:34:19	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:34:34	[tts_server] not running - restarting
+2026-06-20T08:34:34	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:34:34	[motion_server] not running - restarting
+2026-06-20T08:34:34	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:34:49	[tts_server] not running - restarting
+2026-06-20T08:34:49	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:34:49	[motion_server] not running - restarting
+2026-06-20T08:34:49	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:35:04	[tts_server] not running - restarting
+2026-06-20T08:35:04	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:35:04	[motion_server] not running - restarting
+2026-06-20T08:35:04	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:35:19	[tts_server] not running - restarting
+2026-06-20T08:35:19	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:35:19	[motion_server] not running - restarting
+2026-06-20T08:35:19	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:35:34	[tts_server] not running - restarting
+2026-06-20T08:35:34	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:35:34	[motion_server] not running - restarting
+2026-06-20T08:35:34	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:35:49	[tts_server] not running - restarting
+2026-06-20T08:35:49	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:35:49	[motion_server] not running - restarting
+2026-06-20T08:35:49	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:36:04	[tts_server] not running - restarting
+2026-06-20T08:36:04	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:36:04	[motion_server] not running - restarting
+2026-06-20T08:36:04	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:36:19	[tts_server] not running - restarting
+2026-06-20T08:36:19	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:36:19	[motion_server] not running - restarting
+2026-06-20T08:36:19	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:36:34	[tts_server] not running - restarting
+2026-06-20T08:36:34	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:36:34	[motion_server] not running - restarting
+2026-06-20T08:36:34	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:36:49	[tts_server] not running - restarting
+2026-06-20T08:36:49	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:36:49	[motion_server] not running - restarting
+2026-06-20T08:36:49	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:37:04	[tts_server] not running - restarting
+2026-06-20T08:37:04	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:37:04	[motion_server] not running - restarting
+2026-06-20T08:37:04	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:37:19	[tts_server] not running - restarting
+2026-06-20T08:37:19	[tts_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\Coqui-TTS-XTTS-v2-\.venv\Scripts\python.exe (provision its venv first)
+2026-06-20T08:37:19	[motion_server] not running - restarting
+2026-06-20T08:37:19	[motion_server] SKIP - interpreter not found: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\.venv\Scripts\python.exe (provision its venv first)

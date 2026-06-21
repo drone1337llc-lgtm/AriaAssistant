@@ -1,0 +1,2 @@
+C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\brain\src\aria_brain\tray.py:57: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  f.write(f"{datetime.utcnow().isoformat()}Z\taria_tray\t{line}\n")

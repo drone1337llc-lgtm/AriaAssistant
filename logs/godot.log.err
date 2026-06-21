@@ -1,0 +1,25 @@
+ERROR: AnimationPlayer has no current animation.
+   at: get_current_animation_length (scene/animation/animation_player.cpp:723)
+   C# backtrace (most recent call first):
+       [0] double Godot.NativeCalls.godot_icall_0_144(nint, nint) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/NativeCalls.cs:1313)
+       [1] double Godot.AnimationPlayer.GetCurrentAnimationLength() (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/AnimationPlayer.cs:668)
+       [2] double Godot.AnimationPlayer.get_CurrentAnimationLength() (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/AnimationPlayer.cs:88)
+       [3] void CharacterController.PlayAnim(string, float, float, bool) (C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\aria\scripts\CharacterController.cs:1313)
+       [4] void CharacterController.EnterIdle() (C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\aria\scripts\CharacterController.cs:656)
+       [5] void CharacterController.Init(Godot.AnimationPlayer, WindowDetector) (C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\aria\scripts\CharacterController.cs:392)
+       [6] void Main._Ready() (C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\aria\scripts\Main.cs:240)
+       [7] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node.cs:2646)
+       [8] bool Main.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\aria\.godot\mono\temp\obj\Debug\Godot.SourceGenerators\Godot.SourceGenerators.ScriptMethodsGenerator\Main_ScriptMethods.generated.cs:248)
+       [9] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/CSharpInstanceBridge.cs:24)
+[LLM] server error: {
+        "message": "Failed to load model \"humanish-roleplay-llama-3.1-8b-i1\". Error: Operation canceled.",
+        "type": "invalid_request_error",
+        "param": "model",
+        "code": null
+    }
+[LLM] server error: {
+        "message": "Failed to load model \"humanish-roleplay-llama-3.1-8b-i1\". Error: Operation canceled.",
+        "type": "invalid_request_error",
+        "param": "model",
+        "code": null
+    }

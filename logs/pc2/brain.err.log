@@ -1,0 +1,17 @@
+INFO:     Started server process [35820]
+INFO:     Waiting for application startup.
+08:19:28 INFO    aria_brain.server :: aria_brain starting on 0.0.0.0:8770
+08:19:28 INFO    aria_brain.memory :: chromadb warmup: initializing client + collections
+08:19:30 WARNING aria_brain.memory :: chromadb: remote unreachable (ValueError: Server disconnected without sending a response.); falling back to local DuckDB+Parquet
+08:19:30 ERROR   chromadb.telemetry.product.posthog :: Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+08:19:30 INFO    aria_brain.memory :: chromadb: using local fallback at C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\brain\chroma_local
+08:19:30 ERROR   chromadb.telemetry.product.posthog :: Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+08:19:30 INFO    aria_brain.memory ::   collection ready: aria_episodic
+08:19:30 ERROR   chromadb.telemetry.product.posthog :: Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+08:19:30 INFO    aria_brain.memory ::   collection ready: aria_facts
+08:19:30 ERROR   chromadb.telemetry.product.posthog :: Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+08:19:30 INFO    aria_brain.memory ::   collection ready: aria_thoughts
+08:19:30 INFO    aria_brain.reflection :: reflection scheduler: started (every 120 min)
+08:19:30 INFO    aria_brain.server :: aria_brain online
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8770 (Press CTRL+C to quit)

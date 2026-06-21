@@ -1,0 +1,119 @@
+/* ===========================================================================
+   Aria Assistant — Color tokens
+   A warm, naturesque palette drawn from Aria's world: a Kyoto temple terrace
+   at sunset, autumn maples, washi paper, sumi ink, and her own slate-blue eyes.
+   Sampled directly from assets/aria-scene.png. Hints of Japan throughout.
+   Base ramps first, then semantic aliases.
+   =========================================================================== */
+
+:root {
+  /* --- Sumi 墨 — warm ink (text, hair, deepest contrast) ------------------- */
+  --sumi-900: #1A1714;   /* near-black warm ink */
+  --sumi-800: #262120;   /* her hair in shadow #262D33 warmed */
+  --sumi-700: #3A322C;
+  --sumi-600: #5C5147;
+  --sumi-500: #7A6E62;   /* muted ink */
+  --sumi-400: #9A8E80;
+
+  /* --- Washi 和紙 — warm paper (surfaces, the airy base) ------------------- */
+  --washi-50:  #FFFDF8;  /* brightest paper */
+  --washi-100: #FBF6EC;  /* card paper */
+  --washi-200: #F4E9D6;  /* page / sky-cream  (#FADDB3 lightened) */
+  --washi-300: #EAD9BF;  /* muted paper */
+  --washi-400: #DCC6A4;  /* warm hairline / mountains #CA9F75 */
+  --washi-500: #C7AC83;
+
+  /* --- Momiji 紅葉 — autumn maple (PRIMARY accent) ------------------------- */
+  --momiji-200: #E9B89B;
+  --momiji-300: #D98E63;  /* light maple / warm wood #D28D52 */
+  --momiji-400: #C56A3E;  /* maple mid */
+  --momiji-500: #A4502E;  /* PRIMARY — maple red (#A35737 scene) */
+  --momiji-600: #87371C;  /* deep maple (#933916 / #822712) */
+  --momiji-700: #6B2C16;
+
+  /* --- Shu 朱 — vermilion (torii / pagoda highlight, Japan signal) --------- */
+  --shu-400: #E2653C;
+  --shu-500: #D94F2A;     /* bright torii vermilion */
+  --shu-600: #B83C1E;
+
+  /* --- Kogecha 焦茶 — temple wood browns (deep, grounding surfaces) -------- */
+  --wood-800: #2C1A10;    /* temple wood dark (#321A10) */
+  --wood-700: #4A2E1C;
+  --wood-600: #6B3E22;
+  --wood-500: #8A5A34;
+
+  /* --- Matcha 抹茶 — muted moss/foliage green (naturesque hint) ----------- */
+  --matcha-300: #A9B486;
+  --matcha-400: #8C9A5E;
+  --matcha-500: #6F7B4A;
+
+  /* --- Sora 空 — slate blue-grey (Aria's eyes, cool counterpoint) --------- */
+  --sora-300: #A8BFC9;
+  --sora-400: #7C97A8;    /* her eye slate-blue */
+  --sora-500: #5C7585;
+
+  /* --- Sakura 桜 — soft blossom pink (affection, top-of-mood) ------------- */
+  --sakura-300: #F2C2CE;
+  --sakura-400: #E486A0;
+  --sakura-500: #CE647F;
+
+  /* --- Sunset gold (warm ambient glow) ------------------------------------ */
+  --gold-200: #FBEFC8;    /* sunset glow (#FFFEC8) */
+  --gold-300: #F6D9A0;
+  --gold-400: #E8B96B;
+
+  /* ---------------------------------------------------------------------------
+     MOOD SPECTRUM 1–5 — Aria's brain tracks mood on a 1–5 scale that decays in
+     silence and rises with engagement. It maps to a warm-rising seasonal ramp,
+     calm slate → delighted blossom. This is the brand signature.
+     --------------------------------------------------------------------------- */
+  --mood-1: var(--sora-400);    /* resting / quiet */
+  --mood-2: var(--matcha-400);  /* calm */
+  --mood-3: var(--gold-400);    /* content (neutral) */
+  --mood-4: var(--momiji-400);  /* warm / engaged */
+  --mood-5: var(--sakura-400);  /* delighted / affectionate */
+
+  /* ---------------------------------------------------------------------------
+     SEMANTIC ALIASES — author against these, not the ramps above.
+     --------------------------------------------------------------------------- */
+
+  /* Backgrounds — warm, paper-based, airy */
+  --bg-base:        var(--washi-200);   /* page */
+  --bg-elevated:    var(--washi-100);
+  --surface-card:   var(--washi-50);    /* raised paper card */
+  --surface-panel:  var(--washi-100);
+  --surface-inset:  rgba(74, 46, 28, 0.05);   /* faint warm field */
+  --surface-sunken: var(--washi-300);
+  --surface-ink:    var(--wood-800);    /* dark wood panel (inverse) */
+  --surface-bubble: var(--washi-50);    /* speech bubble paper */
+  --surface-hover:  rgba(164, 80, 46, 0.08);
+  --surface-active: rgba(164, 80, 46, 0.14);
+  --scrim:          rgba(44, 26, 16, 0.45);
+
+  /* Text */
+  --text-strong:    var(--sumi-900);
+  --text-body:      var(--sumi-700);
+  --text-muted:     var(--sumi-500);
+  --text-on-ink:    var(--washi-100);   /* text on dark wood */
+  --text-on-accent: var(--washi-50);
+  --text-link:      var(--momiji-500);
+
+  /* Borders — fine ink/wood hairlines */
+  --border-hairline: rgba(58, 50, 44, 0.14);
+  --border-soft:     rgba(58, 50, 44, 0.22);
+  --border-strong:   rgba(58, 50, 44, 0.38);
+  --border-accent:   var(--momiji-400);
+
+  /* Interactive — maple */
+  --primary:        var(--momiji-500);
+  --primary-hover:  var(--momiji-400);
+  --primary-press:  var(--momiji-600);
+  --on-primary:     var(--washi-50);
+
+  /* Feedback */
+  --info:     var(--sora-500);
+  --success:  var(--matcha-500);
+  --warning:  var(--gold-400);
+  --danger:   var(--shu-500);
+  --accent:   var(--shu-500);
+}

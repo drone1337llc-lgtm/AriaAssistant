@@ -1,0 +1,80 @@
+2026-06-17T21:25:38.366179Z	aisistant	aisistant runner online (tick_seconds=30)
+2026-06-17T21:25:38.552959Z	aisistant	tick 1 start (safe_mode=True, services=6)
+2026-06-17T21:28:13.844175Z	aisistant	tick error: Traceback (most recent call last):
+  File "C:\Users\Tench\Documents\AI Learning\aisistant\.venv\Lib\site-packages\crewai\agent\core.py", line 857, in _execute_with_timeout
+    return future.result(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\concurrent\futures\_base.py", line 458, in result
+    raise TimeoutError()
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Tench\Documents\AI Learning\aisistant\src\aisistant\runner.py", line 42, in _tick
+    await flow.kickoff_async(inputs={})
+  File "C:\Users\Tench\Documents\AI Learning\aisistant\.venv\Lib\site-packages\crewai\flow\runtime.py", line 2237, in kickoff_async
+    await asyncio.gather(*tasks)
+  File "C:\Users\Tench\Documents\AI Learning\aisistant\.venv\Lib\site-packages\crewai\flow\runtime.py", line 2477, in _execute_start_method
+    await self._execute_listeners(start_method_name, result, finished_event_id)
+  File "C:\Users\Tench\Documents\AI Learning\aisistant\.venv\Lib\site-packages\crewai\flow\runtime.py", line 2766, in _execute_listeners
+    await asyncio.gather(*tasks)
+TimeoutError: Task 'The previous task produced this WatchReport: {}.
+For each failing service: 1. Call kb_search with the error text as query and the failing service's name to check
+   whether this has been seen before.
+2. If you need log context, call log_tail with log_path and a filter_substring that
+   matches the failing service or error keyword.
+3. Decide on the most likely cause and the action_class:
+   - "restart"  — service is down but the port is free
+   - "kill_process" — port is held by a stale process
+   - "free_port" — port is held but no known owner
+   - "switch_model" — LM Studio returned 400 empty body (model unloaded)
+   - "reconfigure" — config file looks wrong (escalate if uncertain)
+   - "escalate" — anything that needs the human
+
+Return a JSON list of Diagnosis entries, one per failing service. If there are no failing services, return an empty list.
+
+
+Current Date: 2026-06-17' execution timed out after 90 seconds. Consider increasing max_execution_time or optimizing the task.
+2026-06-17T21:28:13.845187Z	aisistant	tick wall-clock: 155.47s
+2026-06-17T21:28:13.852304Z	aisistant	tick 2 start (safe_mode=True, services=6)
+2026-06-17T21:37:43.825011Z	aisistant	tick error: Traceback (most recent call last):
+  File "C:\Users\Tench\Documents\AI Learning\aisistant\.venv\Lib\site-packages\crewai\agent\core.py", line 857, in _execute_with_timeout
+    return future.result(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\concurrent\futures\_base.py", line 458, in result
+    raise TimeoutError()
+TimeoutError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Tench\Documents\AI Learning\aisistant\src\aisistant\runner.py", line 42, in _tick
+    await flow.kickoff_async(inputs={})
+  File "C:\Users\Tench\Documents\AI Learning\aisistant\.venv\Lib\site-packages\crewai\flow\runtime.py", line 2237, in kickoff_async
+    await asyncio.gather(*tasks)
+  File "C:\Users\Tench\Documents\AI Learning\aisistant\.venv\Lib\site-packages\crewai\flow\runtime.py", line 2477, in _execute_start_method
+    await self._execute_listeners(start_method_name, result, finished_event_id)
+  File "C:\Users\Tench\Documents\AI Learning\aisistant\.venv\Lib\site-packages\crewai\flow\runtime.py", line 2766, in _execute_listeners
+    await asyncio.gather(*tasks)
+TimeoutError: Task 'The previous task produced this WatchReport: {}.
+For each failing service: 1. Call kb_search with the error text as query and the failing service's name to check
+   whether this has been seen before.
+2. If you need log context, call log_tail with log_path and a filter_substring that
+   matches the failing service or error keyword.
+3. Decide on the most likely cause and the action_class:
+   - "restart"  — service is down but the port is free
+   - "kill_process" — port is held by a stale process
+   - "free_port" — port is held but no known owner
+   - "switch_model" — LM Studio returned 400 empty body (model unloaded)
+   - "reconfigure" — config file looks wrong (escalate if uncertain)
+   - "escalate" — anything that needs the human
+
+Return a JSON list of Diagnosis entries, one per failing service. If there are no failing services, return an empty list.
+
+
+Current Date: 2026-06-17' execution timed out after 90 seconds. Consider increasing max_execution_time or optimizing the task.
+2026-06-17T21:37:43.828029Z	aisistant	tick wall-clock: 569.98s
+2026-06-17T21:37:43.839037Z	aisistant	tick 3 start (safe_mode=True, services=6)
+2026-06-17T23:02:04.043182Z	aisistant	aisistant runner online (tick_seconds=30)
+2026-06-17T23:02:04.056230Z	aisistant	tick 1 start (safe_mode=True, services=6)

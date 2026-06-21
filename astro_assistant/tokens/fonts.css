@@ -1,0 +1,16 @@
+/* ===========================================================================
+   Aria Assistant — Web fonts
+   A naturesque, Japan-inflected pairing:
+     • Shippori Mincho  — an elegant brush-mincho serif. The "Japan" signal;
+       wordmark, display headings, the calligraphic voice.
+     • Zen Kaku Gothic New — a clean, warm Japanese gothic (sans). UI & body;
+       full kana/kanji coverage for bilingual surfaces.
+     • Zen Maru Gothic  — softly rounded gothic for the companion's gentle
+       speech-bubble voice.
+     • JetBrains Mono   — logs, config, mood telemetry, hotkeys.
+   All four are Google Fonts with native Japanese glyph coverage.
+   SUBSTITUTION FLAG: the native apps render in Segoe UI / system fonts; these
+   web families are an intentional brand choice. Swap if a real brand font lands.
+   =========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap');

@@ -1,0 +1,12 @@
+/* ===========================================================================
+   AstroBud — Web fonts
+   The native apps render in Segoe UI (Windows system font). For web/specimen
+   work we use a friendly rounded stand-in:
+     • Baloo 2     — chunky rounded display, the cute-companion voice
+     • Nunito      — humanist rounded UI/body (web stand-in for Segoe UI)
+     • JetBrains Mono — logs, config, the faux-technical "vector sandbox"
+   SUBSTITUTION FLAG: Baloo 2 / Nunito are design choices, not original brand
+   fonts (the app had no defined web type). Swap if a real brand font arrives.
+   =========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=JetBrains+Mono:wght@400;500;700&display=swap');

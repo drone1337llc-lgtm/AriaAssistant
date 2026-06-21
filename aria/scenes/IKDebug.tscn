@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8c3d2e1f4a5b"]
+
+[ext_resource type="Script" path="res://scripts/IKDebugScene.cs" id="1_ikdebug"]
+
+[node name="IKDebugScene" type="Node3D"]
+script = ExtResource("1_ikdebug")
+AriaModelPath = "res://Ariaversion4.glb"

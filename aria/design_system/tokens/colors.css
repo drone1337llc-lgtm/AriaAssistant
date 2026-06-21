@@ -1,0 +1,85 @@
+/* ===========================================================================
+   AstroBud — Color tokens
+   Pulled from the real app surfaces: astrobud_overlay.py (glassy navy panels,
+   speech bubble, state-glow shadow colors) and dashboard.py.
+   Base ramps first, then semantic aliases.
+   =========================================================================== */
+
+:root {
+  /* --- "Space" navy ramp — the deep-space glass the companion lives in ------ */
+  --space-950: #05060F;   /* deepest void */
+  --space-900: #08091C;   /* overlay chat panel  rgba(8,10,28) */
+  --space-850: #0B0D22;
+  --space-800: #101329;
+  --space-700: #161A33;
+  --space-600: #1A1A2E;   /* speech-bubble ink */
+  --space-500: #262B47;
+  --space-400: #353B5C;
+  --space-300: #4A5176;
+
+  /* --- "Mist" cool-white ramp — text & frost on the glass ------------------- */
+  --mist-50:  #FFFFFF;
+  --mist-100: #F5FAFF;    /* speech bubble surface  rgba(245,250,255) */
+  --mist-200: #E8EEFF;    /* chat input text */
+  --mist-300: #D0D8FF;    /* menu text */
+  --mist-400: #B4C8F0;    /* bubble border periwinkle */
+  --mist-500: #96AAFF;    /* glowing border blue  rgba(150,170,255) */
+  --mist-600: #6E7AB0;    /* muted label */
+  --mist-700: #4C5479;
+
+  /* --- Cornflower — the primary interactive blue --------------------------- */
+  --blue-200: #C4D4FF;
+  --blue-300: #9DB8FF;
+  --blue-400: #78AAF0;    /* primary hover  rgba(120,170,255) */
+  --blue-500: #6496FF;    /* PRIMARY        rgba(100,150,255) */
+  --blue-600: #4F7BE6;
+  --blue-700: #3A5CC0;
+
+  /* --- Companion STATE colors (the signature glow system) ------------------ */
+  --state-idle:   #5082FF;  /* blue   — resting,  rgba(80,130,255) */
+  --state-listen: #50C8FF;  /* cyan   — listening rgba(80,200,255) */
+  --state-think:  #FFC83C;  /* amber  — thinking  rgba(255,200,60) */
+  --state-speak:  #50FF96;  /* green  — speaking  rgba(80,255,150) */
+  --state-error:  #FF5C6E;  /* coral  — offline / fault */
+
+  /* ---------------------------------------------------------------------------
+     SEMANTIC ALIASES — author against these, not the ramps above.
+     --------------------------------------------------------------------------- */
+
+  /* Backgrounds */
+  --bg-base:        var(--space-950);   /* desktop / void behind everything */
+  --bg-elevated:    var(--space-850);
+  --surface-glass:  rgba(8, 9, 28, 0.82);   /* translucent dark glass panel */
+  --surface-panel:  var(--space-800);       /* solid panel */
+  --surface-inset:  rgba(255, 255, 255, 0.05); /* faint inset field */
+  --surface-bubble: rgba(245, 250, 255, 0.92); /* speech bubble */
+  --surface-hover:  rgba(100, 150, 255, 0.12);
+  --surface-active: rgba(100, 150, 255, 0.20);
+
+  /* Text */
+  --text-strong:    var(--mist-100);
+  --text-body:      var(--mist-200);
+  --text-muted:     var(--mist-600);
+  --text-on-glass:  var(--mist-300);
+  --text-on-bubble: var(--space-600);
+  --text-link:      var(--blue-400);
+
+  /* Borders */
+  --border-subtle:  rgba(150, 170, 255, 0.18);
+  --border-glass:   rgba(150, 170, 255, 0.28);
+  --border-glow:    rgba(150, 170, 255, 0.55);
+  --border-bubble:  rgba(180, 200, 240, 0.63);
+
+  /* Interactive */
+  --primary:        var(--blue-500);
+  --primary-hover:  var(--blue-400);
+  --primary-press:  var(--blue-600);
+  --on-primary:     #FFFFFF;
+
+  /* Feedback (maps onto the state system) */
+  --info:     var(--state-listen);
+  --success:  var(--state-speak);
+  --warning:  var(--state-think);
+  --danger:   var(--state-error);
+  --accent:   var(--state-listen);
+}

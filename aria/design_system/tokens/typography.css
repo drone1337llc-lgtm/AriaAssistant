@@ -1,0 +1,51 @@
+/* ===========================================================================
+   AstroBud — Typography tokens
+   =========================================================================== */
+
+:root {
+  /* Families */
+  --font-display: 'Baloo 2', 'Segoe UI', system-ui, sans-serif;
+  --font-ui:      'Nunito', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  /* Type scale — desktop-app density, nudged up for legibility */
+  --text-xs:    12px;
+  --text-sm:    13px;
+  --text-base:  15px;
+  --text-md:    17px;
+  --text-lg:    20px;
+  --text-xl:    26px;
+  --text-2xl:   34px;
+  --text-3xl:   46px;
+  --text-display: 64px;
+
+  /* Weights */
+  --weight-light:     300;
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+  --weight-extrabold: 800;
+
+  /* Line height */
+  --leading-tight:   1.1;
+  --leading-snug:    1.25;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.7;
+
+  /* Letter spacing */
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-label:  0.14em;  /* uppercase techno micro-labels */
+
+  /* Semantic roles */
+  --type-display-family: var(--font-display);
+  --type-display-weight: var(--weight-extrabold);
+  --type-heading-family: var(--font-display);
+  --type-heading-weight: var(--weight-bold);
+  --type-body-family:    var(--font-ui);
+  --type-body-weight:    var(--weight-regular);
+  --type-label-family:   var(--font-mono);
+  --type-label-weight:   var(--weight-medium);
+}

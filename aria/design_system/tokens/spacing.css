@@ -1,0 +1,62 @@
+/* ===========================================================================
+   AstroBud — Spacing, radii, borders, blur, elevation & the GLOW system
+   =========================================================================== */
+
+:root {
+  /* Spacing scale (4px base) */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Radii — measured off the overlay (inputs 8, menus 10, panels 12, bubble 14) */
+  --radius-sm:   8px;
+  --radius-md:   10px;
+  --radius-lg:   12px;
+  --radius-xl:   14px;
+  --radius-2xl:  20px;
+  --radius-pill: 999px;
+  --radius-bubble: 14px;
+
+  /* Borders */
+  --border-width: 1px;
+  --border-glow-width: 1.5px;
+
+  /* Frost — translucent glass backdrop blur */
+  --blur-glass: 18px;
+  --blur-soft:  8px;
+
+  /* Elevation — flat, dark, soft */
+  --shadow-sm:    0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-panel: 0 6px 35px rgba(0, 0, 0, 0.45);
+  --shadow-pop:   0 12px 40px rgba(0, 0, 0, 0.55);
+  --shadow-bubble: 0 8px 24px rgba(20, 24, 60, 0.25);
+
+  /* ---------------------------------------------------------------------------
+     GLOW system — the signature. A colored drop-shadow halo whose hue encodes
+     the companion's state (idle→listen→think→speak). Blur 35, offset 0 6,
+     alpha rising with engagement (0.39 → 0.70), exactly as in the overlay.
+     --------------------------------------------------------------------------- */
+  --glow-idle:   0 6px 35px rgba(80, 130, 255, 0.39);
+  --glow-listen: 0 6px 35px rgba(80, 200, 255, 0.55);
+  --glow-think:  0 6px 35px rgba(255, 200, 60, 0.63);
+  --glow-speak:  0 6px 35px rgba(80, 255, 150, 0.70);
+  --glow-error:  0 6px 35px rgba(255, 92, 110, 0.55);
+
+  /* Focus ring — cornflower halo */
+  --ring-focus: 0 0 0 3px rgba(100, 150, 255, 0.35);
+
+  /* Z layers */
+  --z-base: 0;      /* @kind other */
+  --z-panel: 10;    /* @kind other */
+  --z-bubble: 50;   /* @kind other */
+  --z-overlay: 100; /* @kind other */
+  --z-menu: 200;    /* @kind other */
+}

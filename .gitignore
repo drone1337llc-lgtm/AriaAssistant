@@ -1,26 +1,57 @@
-*.vrm.res
+# ── Python ────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+# Virtual environments (each PC builds its own — never commit these)
+.venv/
+venv/
+env/
+**/.venv/
 
-# Mavis agent session data (local only, not project)
-.mavis/
-
-# Backup / cruft folders
-backups and old files/
-
-# Godot-specific ignores
-.import/
+# ── Godot / .NET ─────────────────────────────────────────────────────────
 .godot/
-export.cfg
-export_presets.cfg
+*.import.bak
+# Mono/C# build output
+**/obj/
+**/bin/
+*.AssemblyAttributes.cs
 
-# Imported translations (automatically generated from CSV files)
-*.translation
+# ── Large / machine-local trees (do NOT commit) ─────────────────────────────
+# Cloned PersonaPlex repo (has its own git + multi-GB model cache)
+personaplex/
+# Coqui XTTS training tree + checkpoints (GBs); the TTS server script lives in
+# scripts/ which IS tracked. Keep the model out of git.
+Coqui-TTS-XTTS-v2-/
+# Motion / diffusion data + outputs
+FloodDiffusion/
+# Generated TTS audio cache
+tts_cache/
+**/tts_cache/
+# HuggingFace / model caches
+.cache/
+*.safetensors
+*.pth
+*.ckpt
+*.bin
 
-# Mono-specific ignores
-.mono/
-data_*/
+# ── Logs / runtime ──────────────────────────────────────────────────────────
+logs/
+**/logs/
+*.log
+*.pid
 
-# System/tool-specific ignores
+# ── Secrets / machine config (commit .env.example, NOT .env) ────────────────
+.env
+brain/.env
+*.local.yaml
+
+# ── OS cruft ─────────────────────────────────────────────────────────────────
+Thumbs.db
 .DS_Store
-*~
+desktop.ini
 
-.venv\Lib
+# ── Editor ───────────────────────────────────────────────────────────────────
+.vs/
+.idea/
+.vscode/

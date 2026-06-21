@@ -1,8 +1,0 @@
-res://scripts/AnimationBuilder.cs
-res://scripts/CharacterController.cs
-res://scripts/LLMBridge.cs
-res://scripts/WindowDetector.cs
-res://scripts/Main.cs
-res://scripts/TTSBridge.cs
-res://scripts/ExpressionController.cs
-res://scripts/HealthMonitor.cs

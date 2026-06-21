@@ -1,0 +1,227 @@
+2026-06-17 15:25:38: task_name="watch_task", task="Poll every service in services.yaml once and tail aria_health.log for any new error lines since the previous tick. For each service call the service_health tool with the service name as input. For aria_health.log call log_tail with path=ARIA_HEALTH_LOG and lines=20.
+Then assemble a WatchReport with: - tick_number: 1 - services_checked: number of services probed - healthy: list of healthy service names - failing: list of FailingService entries (name, error, last_check_iso = now) - warnings: any service whose response was slow (>2s) or returned non-2xx-but-not-error - new_log_lines: lines from aria_health.log that look like errors (contain 'error', 'fail',
+  'crash', 'down', 'timeout', or 'escalate')
+- escalation_needed: True if any failing service has critical=True
+Inputs available: 1, [{'name': 'aria_chat_server', 'host': '127.0.0.1', 'port': 8767, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'tts_server', 'host': '127.0.0.1', 'port': 5003, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'lm_studio', 'host': '192.168.68.88', 'port': 1010, 'proto': 'http', 'health_path': '/v1/models', 'critical': True}, {'name': 'astro_server', 'host': '192.168.68.88', 'port': 8765, 'proto': 'ws', 'health_path': '/', 'critical': False}, {'name': 'motion_server', 'host': '192.168.68.88', 'port': 8766, 'proto': 'http', 'health_path': '/', 'critical': False}, {'name': 'aria_brain', 'host': '127.0.0.1', 'port': 8770, 'proto': 'http', 'health_path': '/health', 'critical': True}], C:\Users\Tench\Documents\AI Learning\aisistant\aria_health.log, previous tick had 0 failing services. Return ONLY the JSON WatchReport, no extra prose.
+", agent="Aria Backend Service Watcher
+", status="started"
+2026-06-17 15:26:19: task_name="watch_task", task="Poll every service in services.yaml once and tail aria_health.log for any new error lines since the previous tick. For each service call the service_health tool with the service name as input. For aria_health.log call log_tail with path=ARIA_HEALTH_LOG and lines=20.
+Then assemble a WatchReport with: - tick_number: 1 - services_checked: number of services probed - healthy: list of healthy service names - failing: list of FailingService entries (name, error, last_check_iso = now) - warnings: any service whose response was slow (>2s) or returned non-2xx-but-not-error - new_log_lines: lines from aria_health.log that look like errors (contain 'error', 'fail',
+  'crash', 'down', 'timeout', or 'escalate')
+- escalation_needed: True if any failing service has critical=True
+Inputs available: 1, [{'name': 'aria_chat_server', 'host': '127.0.0.1', 'port': 8767, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'tts_server', 'host': '127.0.0.1', 'port': 5003, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'lm_studio', 'host': '192.168.68.88', 'port': 1010, 'proto': 'http', 'health_path': '/v1/models', 'critical': True}, {'name': 'astro_server', 'host': '192.168.68.88', 'port': 8765, 'proto': 'ws', 'health_path': '/', 'critical': False}, {'name': 'motion_server', 'host': '192.168.68.88', 'port': 8766, 'proto': 'http', 'health_path': '/', 'critical': False}, {'name': 'aria_brain', 'host': '127.0.0.1', 'port': 8770, 'proto': 'http', 'health_path': '/health', 'critical': True}], C:\Users\Tench\Documents\AI Learning\aisistant\aria_health.log, previous tick had 0 failing services. Return ONLY the JSON WatchReport, no extra prose.
+
+
+Current Date: 2026-06-17", agent="Aria Backend Service Watcher
+", status="completed", output="{
+  "tick_number": 1,
+  "timestamp": "2026-06-17T21:25:38Z",
+  "services_checked": 4,
+  "healthy": ["aria_chat_server", "tts_server", "lm_studio"],
+  "failing": [],
+  "warnings": [],
+  "new_log_lines": [
+    "2026-06-17T21:25:38.366179Z	aisistant	aisistant runner online (tick_seconds=30)",
+    "2026-06-17T21:25:38.552959Z	aisistant	tick 1 start (safe_mode=True, services=6)"
+  ],
+  "escalation_needed": false
+}"
+2026-06-17 15:26:19: task_name="diagnose_task", task="The previous task produced this WatchReport: {}.
+For each failing service: 1. Call kb_search with the error text as query and the failing service's name to check
+   whether this has been seen before.
+2. If you need log context, call log_tail with log_path and a filter_substring that
+   matches the failing service or error keyword.
+3. Decide on the most likely cause and the action_class:
+   - "restart"  — service is down but the port is free
+   - "kill_process" — port is held by a stale process
+   - "free_port" — port is held but no known owner
+   - "switch_model" — LM Studio returned 400 empty body (model unloaded)
+   - "reconfigure" — config file looks wrong (escalate if uncertain)
+   - "escalate" — anything that needs the human
+
+Return a JSON list of Diagnosis entries, one per failing service. If there are no failing services, return an empty list.
+", agent="Aria Backend Diagnostician
+", status="started"
+2026-06-17 15:28:13: task_name="watch_task", task="Poll every service in services.yaml once and tail aria_health.log for any new error lines since the previous tick. For each service call the service_health tool with the service name as input. For aria_health.log call log_tail with path=ARIA_HEALTH_LOG and lines=20.
+Then assemble a WatchReport with: - tick_number: 2 - services_checked: number of services probed - healthy: list of healthy service names - failing: list of FailingService entries (name, error, last_check_iso = now) - warnings: any service whose response was slow (>2s) or returned non-2xx-but-not-error - new_log_lines: lines from aria_health.log that look like errors (contain 'error', 'fail',
+  'crash', 'down', 'timeout', or 'escalate')
+- escalation_needed: True if any failing service has critical=True
+Inputs available: 2, [{'name': 'aria_chat_server', 'host': '127.0.0.1', 'port': 8767, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'tts_server', 'host': '127.0.0.1', 'port': 5003, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'lm_studio', 'host': '192.168.68.88', 'port': 1010, 'proto': 'http', 'health_path': '/v1/models', 'critical': True}, {'name': 'astro_server', 'host': '192.168.68.88', 'port': 8765, 'proto': 'ws', 'health_path': '/', 'critical': False}, {'name': 'motion_server', 'host': '192.168.68.88', 'port': 8766, 'proto': 'http', 'health_path': '/', 'critical': False}, {'name': 'aria_brain', 'host': '127.0.0.1', 'port': 8770, 'proto': 'http', 'health_path': '/health', 'critical': True}], C:\Users\Tench\Documents\AI Learning\aisistant\aria_health.log, previous tick had 0 failing services. Return ONLY the JSON WatchReport, no extra prose.
+", agent="Aria Backend Service Watcher
+", status="started"
+2026-06-17 15:28:51: task_name="watch_task", task="Poll every service in services.yaml once and tail aria_health.log for any new error lines since the previous tick. For each service call the service_health tool with the service name as input. For aria_health.log call log_tail with path=ARIA_HEALTH_LOG and lines=20.
+Then assemble a WatchReport with: - tick_number: 2 - services_checked: number of services probed - healthy: list of healthy service names - failing: list of FailingService entries (name, error, last_check_iso = now) - warnings: any service whose response was slow (>2s) or returned non-2xx-but-not-error - new_log_lines: lines from aria_health.log that look like errors (contain 'error', 'fail',
+  'crash', 'down', 'timeout', or 'escalate')
+- escalation_needed: True if any failing service has critical=True
+Inputs available: 2, [{'name': 'aria_chat_server', 'host': '127.0.0.1', 'port': 8767, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'tts_server', 'host': '127.0.0.1', 'port': 5003, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'lm_studio', 'host': '192.168.68.88', 'port': 1010, 'proto': 'http', 'health_path': '/v1/models', 'critical': True}, {'name': 'astro_server', 'host': '192.168.68.88', 'port': 8765, 'proto': 'ws', 'health_path': '/', 'critical': False}, {'name': 'motion_server', 'host': '192.168.68.88', 'port': 8766, 'proto': 'http', 'health_path': '/', 'critical': False}, {'name': 'aria_brain', 'host': '127.0.0.1', 'port': 8770, 'proto': 'http', 'health_path': '/health', 'critical': True}], C:\Users\Tench\Documents\AI Learning\aisistant\aria_health.log, previous tick had 0 failing services. Return ONLY the JSON WatchReport, no extra prose.
+
+
+Current Date: 2026-06-17", agent="Aria Backend Service Watcher
+", status="completed", output="{
+  "tick_number": 2,
+  "timestamp": "2026-06-17T21:28:13.852304Z",
+  "services_checked": 6,
+  "healthy": ["aria_chat_server", "tts_server", "lm_studio", "astro_server"],
+  "failing": [],
+  "warnings": [],
+  "new_log_lines": [],
+  "escalation_needed": false
+}"
+2026-06-17 15:28:51: task_name="diagnose_task", task="The previous task produced this WatchReport: {}.
+For each failing service: 1. Call kb_search with the error text as query and the failing service's name to check
+   whether this has been seen before.
+2. If you need log context, call log_tail with log_path and a filter_substring that
+   matches the failing service or error keyword.
+3. Decide on the most likely cause and the action_class:
+   - "restart"  — service is down but the port is free
+   - "kill_process" — port is held by a stale process
+   - "free_port" — port is held but no known owner
+   - "switch_model" — LM Studio returned 400 empty body (model unloaded)
+   - "reconfigure" — config file looks wrong (escalate if uncertain)
+   - "escalate" — anything that needs the human
+
+Return a JSON list of Diagnosis entries, one per failing service. If there are no failing services, return an empty list.
+", agent="Aria Backend Diagnostician
+", status="started"
+2026-06-17 15:37:43: task_name="watch_task", task="Poll every service in services.yaml once and tail aria_health.log for any new error lines since the previous tick. For each service call the service_health tool with the service name as input. For aria_health.log call log_tail with path=ARIA_HEALTH_LOG and lines=20.
+Then assemble a WatchReport with: - tick_number: 3 - services_checked: number of services probed - healthy: list of healthy service names - failing: list of FailingService entries (name, error, last_check_iso = now) - warnings: any service whose response was slow (>2s) or returned non-2xx-but-not-error - new_log_lines: lines from aria_health.log that look like errors (contain 'error', 'fail',
+  'crash', 'down', 'timeout', or 'escalate')
+- escalation_needed: True if any failing service has critical=True
+Inputs available: 3, [{'name': 'aria_chat_server', 'host': '127.0.0.1', 'port': 8767, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'tts_server', 'host': '127.0.0.1', 'port': 5003, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'lm_studio', 'host': '192.168.68.88', 'port': 1010, 'proto': 'http', 'health_path': '/v1/models', 'critical': True}, {'name': 'astro_server', 'host': '192.168.68.88', 'port': 8765, 'proto': 'ws', 'health_path': '/', 'critical': False}, {'name': 'motion_server', 'host': '192.168.68.88', 'port': 8766, 'proto': 'http', 'health_path': '/', 'critical': False}, {'name': 'aria_brain', 'host': '127.0.0.1', 'port': 8770, 'proto': 'http', 'health_path': '/health', 'critical': True}], C:\Users\Tench\Documents\AI Learning\aisistant\aria_health.log, previous tick had 0 failing services. Return ONLY the JSON WatchReport, no extra prose.
+", agent="Aria Backend Service Watcher
+", status="started"
+2026-06-17 15:37:46: task_name="watch_task", task="Poll every service in services.yaml once and tail aria_health.log for any new error lines since the previous tick. For each service call the service_health tool with the service name as input. For aria_health.log call log_tail with path=ARIA_HEALTH_LOG and lines=20.
+Then assemble a WatchReport with: - tick_number: 3 - services_checked: number of services probed - healthy: list of healthy service names - failing: list of FailingService entries (name, error, last_check_iso = now) - warnings: any service whose response was slow (>2s) or returned non-2xx-but-not-error - new_log_lines: lines from aria_health.log that look like errors (contain 'error', 'fail',
+  'crash', 'down', 'timeout', or 'escalate')
+- escalation_needed: True if any failing service has critical=True
+Inputs available: 3, [{'name': 'aria_chat_server', 'host': '127.0.0.1', 'port': 8767, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'tts_server', 'host': '127.0.0.1', 'port': 5003, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'lm_studio', 'host': '192.168.68.88', 'port': 1010, 'proto': 'http', 'health_path': '/v1/models', 'critical': True}, {'name': 'astro_server', 'host': '192.168.68.88', 'port': 8765, 'proto': 'ws', 'health_path': '/', 'critical': False}, {'name': 'motion_server', 'host': '192.168.68.88', 'port': 8766, 'proto': 'http', 'health_path': '/', 'critical': False}, {'name': 'aria_brain', 'host': '127.0.0.1', 'port': 8770, 'proto': 'http', 'health_path': '/health', 'critical': True}], C:\Users\Tench\Documents\AI Learning\aisistant\aria_health.log, previous tick had 0 failing services. Return ONLY the JSON WatchReport, no extra prose.
+
+
+Current Date: 2026-06-17", agent="Aria Backend Service Watcher
+", status="completed", output=" No more thinking or actions.
+
+```
+{
+  "tick_number": 3,
+  "timestamp": "2026-06-17T21:37:43.839Z",
+  "services_checked": 5,
+  "healthy": [
+    "aria_chat_server",
+    "tts_server",
+    "lm_studio",
+    "astro_server"
+  ],
+  "failing": [],
+  "warnings": [],
+  "new_log_lines": [],
+  "escalation_needed": false
+}
+```"
+2026-06-17 15:37:46: task_name="diagnose_task", task="The previous task produced this WatchReport: {}.
+For each failing service: 1. Call kb_search with the error text as query and the failing service's name to check
+   whether this has been seen before.
+2. If you need log context, call log_tail with log_path and a filter_substring that
+   matches the failing service or error keyword.
+3. Decide on the most likely cause and the action_class:
+   - "restart"  — service is down but the port is free
+   - "kill_process" — port is held by a stale process
+   - "free_port" — port is held but no known owner
+   - "switch_model" — LM Studio returned 400 empty body (model unloaded)
+   - "reconfigure" — config file looks wrong (escalate if uncertain)
+   - "escalate" — anything that needs the human
+
+Return a JSON list of Diagnosis entries, one per failing service. If there are no failing services, return an empty list.
+", agent="Aria Backend Diagnostician
+", status="started"
+2026-06-17 17:02:04: task_name="watch_task", task="Poll every service in services.yaml once and tail aria_health.log for any new error lines since the previous tick. For each service call the service_health tool with the service name as input. For aria_health.log call log_tail with path=ARIA_HEALTH_LOG and lines=20.
+Then assemble a WatchReport with: - tick_number: 1 - services_checked: number of services probed - healthy: list of healthy service names - failing: list of FailingService entries (name, error, last_check_iso = now) - warnings: any service whose response was slow (>2s) or returned non-2xx-but-not-error - new_log_lines: lines from aria_health.log that look like errors (contain 'error', 'fail',
+  'crash', 'down', 'timeout', or 'escalate')
+- escalation_needed: True if any failing service has critical=True
+Inputs available: 1, [{'name': 'aria_chat_server', 'host': '127.0.0.1', 'port': 8767, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'tts_server', 'host': '127.0.0.1', 'port': 5003, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'lm_studio', 'host': '192.168.68.88', 'port': 1010, 'proto': 'http', 'health_path': '/v1/models', 'critical': True}, {'name': 'astro_server', 'host': '192.168.68.88', 'port': 8765, 'proto': 'ws', 'health_path': '/', 'critical': False}, {'name': 'motion_server', 'host': '192.168.68.88', 'port': 8766, 'proto': 'http', 'health_path': '/', 'critical': False}, {'name': 'aria_brain', 'host': '127.0.0.1', 'port': 8770, 'proto': 'http', 'health_path': '/health', 'critical': True}], C:\Users\Tench\Documents\AI Learning\aisistant\aria_health.log, previous tick had 0 failing services. Return ONLY the JSON WatchReport, no extra prose.
+", agent="Aria Backend Service Watcher
+", status="started"
+2026-06-17 17:02:10: task_name="watch_task", task="Poll every service in services.yaml once and tail aria_health.log for any new error lines since the previous tick. For each service call the service_health tool with the service name as input. For aria_health.log call log_tail with path=ARIA_HEALTH_LOG and lines=20.
+Then assemble a WatchReport with: - tick_number: 1 - services_checked: number of services probed - healthy: list of healthy service names - failing: list of FailingService entries (name, error, last_check_iso = now) - warnings: any service whose response was slow (>2s) or returned non-2xx-but-not-error - new_log_lines: lines from aria_health.log that look like errors (contain 'error', 'fail',
+  'crash', 'down', 'timeout', or 'escalate')
+- escalation_needed: True if any failing service has critical=True
+Inputs available: 1, [{'name': 'aria_chat_server', 'host': '127.0.0.1', 'port': 8767, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'tts_server', 'host': '127.0.0.1', 'port': 5003, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'lm_studio', 'host': '192.168.68.88', 'port': 1010, 'proto': 'http', 'health_path': '/v1/models', 'critical': True}, {'name': 'astro_server', 'host': '192.168.68.88', 'port': 8765, 'proto': 'ws', 'health_path': '/', 'critical': False}, {'name': 'motion_server', 'host': '192.168.68.88', 'port': 8766, 'proto': 'http', 'health_path': '/', 'critical': False}, {'name': 'aria_brain', 'host': '127.0.0.1', 'port': 8770, 'proto': 'http', 'health_path': '/health', 'critical': True}], C:\Users\Tench\Documents\AI Learning\aisistant\aria_health.log, previous tick had 0 failing services. Return ONLY the JSON WatchReport, no extra prose.
+
+
+Current Date: 2026-06-17", agent="Aria Backend Service Watcher
+", status="completed", output=" No more analysis or commentary.
+
+```
+{
+  "tick_number": 1,
+  "timestamp": "2026-06-17T23:02:04.056230Z",
+  "services_checked": 6,
+  "healthy": ["aria_chat_server", "tts_server", "lm_studio"],
+  "failing": [],
+  "warnings": [],
+  "new_log_lines": [
+    "2026-06-17T23:02:04.056230Z	aisistant	tick wall-clock: 569.98s",
+    "2026-06-17T23:02:04.056230Z	aisistant	tick 3 start (safe_mode=True, services=6)",
+    "2026-06-17T23:02:04.043182Z	aisistant	aisistant runner online (tick_seconds=30)",
+    "2026-06-17T23:02:04.056230Z	aisistant	tick 1 start (safe_mode=True, services=6)"
+  ],
+  "escalation_needed": false
+}
+```"
+2026-06-17 17:02:10: task_name="diagnose_task", task="The previous task produced this WatchReport: {}.
+For each failing service: 1. Call kb_search with the error text as query and the failing service's name to check
+   whether this has been seen before.
+2. If you need log context, call log_tail with log_path and a filter_substring that
+   matches the failing service or error keyword.
+3. Decide on the most likely cause and the action_class:
+   - "restart"  — service is down but the port is free
+   - "kill_process" — port is held by a stale process
+   - "free_port" — port is held but no known owner
+   - "switch_model" — LM Studio returned 400 empty body (model unloaded)
+   - "reconfigure" — config file looks wrong (escalate if uncertain)
+   - "escalate" — anything that needs the human
+
+Return a JSON list of Diagnosis entries, one per failing service. If there are no failing services, return an empty list.
+", agent="Aria Backend Diagnostician
+", status="started"
+2026-06-18 17:25:34: task_name="watch_task", task="Poll every service in services.yaml once and tail aria_health.log for any new error lines since the previous tick. For each service call the service_health tool with the service name as input. For aria_health.log call log_tail with path=ARIA_HEALTH_LOG and lines=20.
+Then assemble a WatchReport with: - tick_number: 1 - services_checked: number of services probed - healthy: list of healthy service names - failing: list of FailingService entries (name, error, last_check_iso = now) - warnings: any service whose response was slow (>2s) or returned non-2xx-but-not-error - new_log_lines: lines from aria_health.log that look like errors (contain 'error', 'fail',
+  'crash', 'down', 'timeout', or 'escalate')
+- escalation_needed: True if any failing service has critical=True
+Inputs available: 1, [{'name': 'aria_chat_server', 'host': '127.0.0.1', 'port': 8767, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'tts_server', 'host': '127.0.0.1', 'port': 5003, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'lm_studio', 'host': '192.168.68.88', 'port': 1010, 'proto': 'http', 'health_path': '/v1/models', 'critical': True}, {'name': 'astro_server', 'host': '192.168.68.88', 'port': 8765, 'proto': 'ws', 'health_path': '/', 'critical': False}, {'name': 'motion_server', 'host': '192.168.68.88', 'port': 8766, 'proto': 'http', 'health_path': '/', 'critical': False}, {'name': 'aria_brain', 'host': '127.0.0.1', 'port': 8770, 'proto': 'http', 'health_path': '/health', 'critical': True}], C:\Users\Tench\Documents\AI Learning\aria_health.log, previous tick had 0 failing services. Return ONLY the JSON WatchReport, no extra prose.
+", agent="Aria Backend Service Watcher
+", status="started"
+2026-06-18 17:26:42: task_name="watch_task", task="Poll every service in services.yaml once and tail aria_health.log for any new error lines since the previous tick. For each service call the service_health tool with the service name as input. For aria_health.log call log_tail with path=ARIA_HEALTH_LOG and lines=20.
+Then assemble a WatchReport with: - tick_number: 2 - services_checked: number of services probed - healthy: list of healthy service names - failing: list of FailingService entries (name, error, last_check_iso = now) - warnings: any service whose response was slow (>2s) or returned non-2xx-but-not-error - new_log_lines: lines from aria_health.log that look like errors (contain 'error', 'fail',
+  'crash', 'down', 'timeout', or 'escalate')
+- escalation_needed: True if any failing service has critical=True
+Inputs available: 2, [{'name': 'aria_chat_server', 'host': '127.0.0.1', 'port': 8767, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'tts_server', 'host': '127.0.0.1', 'port': 5003, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'lm_studio', 'host': '192.168.68.88', 'port': 1010, 'proto': 'http', 'health_path': '/v1/models', 'critical': True}, {'name': 'astro_server', 'host': '192.168.68.88', 'port': 8765, 'proto': 'ws', 'health_path': '/', 'critical': False}, {'name': 'motion_server', 'host': '192.168.68.88', 'port': 8766, 'proto': 'http', 'health_path': '/', 'critical': False}, {'name': 'aria_brain', 'host': '127.0.0.1', 'port': 8770, 'proto': 'http', 'health_path': '/health', 'critical': True}], C:\Users\Tench\Documents\AI Learning\aria_health.log, previous tick had 0 failing services. Return ONLY the JSON WatchReport, no extra prose.
+", agent="Aria Backend Service Watcher
+", status="started"
+2026-06-18 17:28:13: task_name="watch_task", task="Poll every service in services.yaml once and tail aria_health.log for any new error lines since the previous tick. For each service call the service_health tool with the service name as input. For aria_health.log call log_tail with path=ARIA_HEALTH_LOG and lines=20.
+Then assemble a WatchReport with: - tick_number: 3 - services_checked: number of services probed - healthy: list of healthy service names - failing: list of FailingService entries (name, error, last_check_iso = now) - warnings: any service whose response was slow (>2s) or returned non-2xx-but-not-error - new_log_lines: lines from aria_health.log that look like errors (contain 'error', 'fail',
+  'crash', 'down', 'timeout', or 'escalate')
+- escalation_needed: True if any failing service has critical=True
+Inputs available: 3, [{'name': 'aria_chat_server', 'host': '127.0.0.1', 'port': 8767, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'tts_server', 'host': '127.0.0.1', 'port': 5003, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'lm_studio', 'host': '192.168.68.88', 'port': 1010, 'proto': 'http', 'health_path': '/v1/models', 'critical': True}, {'name': 'astro_server', 'host': '192.168.68.88', 'port': 8765, 'proto': 'ws', 'health_path': '/', 'critical': False}, {'name': 'motion_server', 'host': '192.168.68.88', 'port': 8766, 'proto': 'http', 'health_path': '/', 'critical': False}, {'name': 'aria_brain', 'host': '127.0.0.1', 'port': 8770, 'proto': 'http', 'health_path': '/health', 'critical': True}], C:\Users\Tench\Documents\AI Learning\aria_health.log, previous tick had 0 failing services. Return ONLY the JSON WatchReport, no extra prose.
+", agent="Aria Backend Service Watcher
+", status="started"
+2026-06-18 17:29:36: task_name="watch_task", task="Poll every service in services.yaml once and tail aria_health.log for any new error lines since the previous tick. For each service call the service_health tool with the service name as input. For aria_health.log call log_tail with path=ARIA_HEALTH_LOG and lines=20.
+Then assemble a WatchReport with: - tick_number: 4 - services_checked: number of services probed - healthy: list of healthy service names - failing: list of FailingService entries (name, error, last_check_iso = now) - warnings: any service whose response was slow (>2s) or returned non-2xx-but-not-error - new_log_lines: lines from aria_health.log that look like errors (contain 'error', 'fail',
+  'crash', 'down', 'timeout', or 'escalate')
+- escalation_needed: True if any failing service has critical=True
+Inputs available: 4, [{'name': 'aria_chat_server', 'host': '127.0.0.1', 'port': 8767, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'tts_server', 'host': '127.0.0.1', 'port': 5003, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'lm_studio', 'host': '192.168.68.88', 'port': 1010, 'proto': 'http', 'health_path': '/v1/models', 'critical': True}, {'name': 'astro_server', 'host': '192.168.68.88', 'port': 8765, 'proto': 'ws', 'health_path': '/', 'critical': False}, {'name': 'motion_server', 'host': '192.168.68.88', 'port': 8766, 'proto': 'http', 'health_path': '/', 'critical': False}, {'name': 'aria_brain', 'host': '127.0.0.1', 'port': 8770, 'proto': 'http', 'health_path': '/health', 'critical': True}], C:\Users\Tench\Documents\AI Learning\aria_health.log, previous tick had 0 failing services. Return ONLY the JSON WatchReport, no extra prose.
+", agent="Aria Backend Service Watcher
+", status="started"
+2026-06-18 17:30:59: task_name="watch_task", task="Poll every service in services.yaml once and tail aria_health.log for any new error lines since the previous tick. For each service call the service_health tool with the service name as input. For aria_health.log call log_tail with path=ARIA_HEALTH_LOG and lines=20.
+Then assemble a WatchReport with: - tick_number: 5 - services_checked: number of services probed - healthy: list of healthy service names - failing: list of FailingService entries (name, error, last_check_iso = now) - warnings: any service whose response was slow (>2s) or returned non-2xx-but-not-error - new_log_lines: lines from aria_health.log that look like errors (contain 'error', 'fail',
+  'crash', 'down', 'timeout', or 'escalate')
+- escalation_needed: True if any failing service has critical=True
+Inputs available: 5, [{'name': 'aria_chat_server', 'host': '127.0.0.1', 'port': 8767, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'tts_server', 'host': '127.0.0.1', 'port': 5003, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'lm_studio', 'host': '192.168.68.88', 'port': 1010, 'proto': 'http', 'health_path': '/v1/models', 'critical': True}, {'name': 'astro_server', 'host': '192.168.68.88', 'port': 8765, 'proto': 'ws', 'health_path': '/', 'critical': False}, {'name': 'motion_server', 'host': '192.168.68.88', 'port': 8766, 'proto': 'http', 'health_path': '/', 'critical': False}, {'name': 'aria_brain', 'host': '127.0.0.1', 'port': 8770, 'proto': 'http', 'health_path': '/health', 'critical': True}], C:\Users\Tench\Documents\AI Learning\aria_health.log, previous tick had 0 failing services. Return ONLY the JSON WatchReport, no extra prose.
+", agent="Aria Backend Service Watcher
+", status="started"
+2026-06-18 17:32:02: task_name="watch_task", task="Poll every service in services.yaml once and tail aria_health.log for any new error lines since the previous tick. For each service call the service_health tool with the service name as input. For aria_health.log call log_tail with path=ARIA_HEALTH_LOG and lines=20.
+Then assemble a WatchReport with: - tick_number: 6 - services_checked: number of services probed - healthy: list of healthy service names - failing: list of FailingService entries (name, error, last_check_iso = now) - warnings: any service whose response was slow (>2s) or returned non-2xx-but-not-error - new_log_lines: lines from aria_health.log that look like errors (contain 'error', 'fail',
+  'crash', 'down', 'timeout', or 'escalate')
+- escalation_needed: True if any failing service has critical=True
+Inputs available: 6, [{'name': 'aria_chat_server', 'host': '127.0.0.1', 'port': 8767, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'tts_server', 'host': '127.0.0.1', 'port': 5003, 'proto': 'http', 'health_path': '/', 'critical': True}, {'name': 'lm_studio', 'host': '192.168.68.88', 'port': 1010, 'proto': 'http', 'health_path': '/v1/models', 'critical': True}, {'name': 'astro_server', 'host': '192.168.68.88', 'port': 8765, 'proto': 'ws', 'health_path': '/', 'critical': False}, {'name': 'motion_server', 'host': '192.168.68.88', 'port': 8766, 'proto': 'http', 'health_path': '/', 'critical': False}, {'name': 'aria_brain', 'host': '127.0.0.1', 'port': 8770, 'proto': 'http', 'health_path': '/health', 'critical': True}], C:\Users\Tench\Documents\AI Learning\aria_health.log, previous tick had 0 failing services. Return ONLY the JSON WatchReport, no extra prose.
+", agent="Aria Backend Service Watcher
+", status="started"

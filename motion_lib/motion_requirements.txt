@@ -1,0 +1,33 @@
+# FloodDiffusion motion server dependencies (for PC 2, the AI server).
+# Install in a fresh venv after activating it:
+#   pip install -r motion_requirements.txt
+#
+# The Godot client (AriaAssistantApp) doesn't need any of these — it talks
+# to the server over HTTP.
+#
+# Note: this file is additive to astro_assistant/requirements.txt. The base
+# requirements must already be installed (Flask, websockets, requests, …) for
+# the rest of the astro_assistant code to work.
+#
+# FloodDiffusion itself (HuggingFace):
+#   pip install transformers torch
+#   # torch: see https://pytorch.org/get-started/locally/ for your CUDA version
+#   pip install huggingface_hub numpy
+#   pip install flash-attn --no-build-isolation   # optional, 2-3x faster
+#
+# The default model ShandaAI/FloodDiffusion needs ~16GB VRAM. If your GPU has
+# less (e.g. RTX 3090's 24GB is fine, but a 3060 with 12GB is not), use the
+# tiny version:
+#   python motion_server.py --model ShandaAI/FloodDiffusionTiny
+#
+# The server's HTTP layer uses only Python's stdlib (http.server + json), so
+# no Flask/FastAPI is required.
+
+# Core
+numpy>=1.24
+huggingface_hub>=0.20
+
+# FloodDiffusion model
+transformers>=4.40
+torch>=2.1          # match FloodDiffusion's tested version
+# For GPU support, install the CUDA build instead — see comment above

@@ -1,0 +1,46 @@
+# Aria backend service map.
+# Edit this file to add/remove services the crew should watch.
+# Each entry: name, host, port, proto (http|ws|tcp), health_path, critical (bool).
+# Default comes from src/aisistant/config.py; this file OVERRIDES the default if present.
+
+- name: aria_chat_server
+  host: 127.0.0.1
+  port: 8767
+  proto: http
+  health_path: /
+  critical: true
+
+- name: tts_server
+  host: 127.0.0.1
+  port: 5003
+  proto: http
+  health_path: /
+  critical: true
+
+- name: lm_studio
+  host: 192.168.68.88
+  port: 1010
+  proto: http
+  health_path: /v1/models
+  critical: true
+
+- name: astro_server
+  host: 192.168.68.88
+  port: 8765
+  proto: ws
+  health_path: /
+  critical: false
+
+- name: motion_server
+  host: 192.168.68.88
+  port: 8766
+  proto: http
+  health_path: /
+  critical: false
+
+- name: aria_brain
+  host: 127.0.0.1
+  port: 8770
+  proto: http
+  health_path: /health
+  critical: true

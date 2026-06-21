@@ -1,0 +1,22 @@
+# Known fixes — Aria backend crew knowledge base.
+# This file is managed by the Knowledge Manager agent.
+# Format: each entry is a single mapping with the keys:
+#   id          unique slug, e.g. "lm_studio_400_empty_body"
+#   service     service name from services.yaml
+#   symptom     short description of what was observed
+#   cause       root cause
+#   action      what to do (and which tool/command)
+#   action_class restart | kill_process | free_port | switch_model | reconfigure | escalate
+#   verified_at ISO timestamp of last successful run
+#   occurrences how many times this fix has been applied successfully
+
+# Example entry (uncomment and adapt as the KB grows):
+#
+# - id: lm_studio_silent_unload
+#   service: lm_studio
+#   symptom: "POST /v1/chat/completions returns 400 with empty body"
+#   cause: "LM Studio silently unloaded the model"
+#   action: "Ask user to re-load the model in LM Studio UI"
+#   action_class: escalate
+#   verified_at: "2026-06-13T16:00:00Z"
+#   occurrences: 1

@@ -1,0 +1,7 @@
+curator module not available: No module named 'curator'
+2026-06-20 18:57:43,467 [INFO] motion_server: motion library path: C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\motion_library.json (watchdog every 60s)
+2026-06-20 18:57:43,470 [INFO] motion_server: library reloaded: 752 animations (was 0) — C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\motion_lib\motion_library.json
+2026-06-20 18:57:43,471 [INFO] motion_server: library loaded: 752 animations
+2026-06-20 18:57:43,472 [INFO] motion_server: worker started (capacity=100, model=ShandaAI/FloodDiffusion, fps=30)
+2026-06-20 18:57:43,473 [INFO] motion_server: curator worker started
+2026-06-20 18:57:43,478 [INFO] motion_server: HTTP server listening on http://0.0.0.0:8766 (POST /motion, /motion/status, /curator; GET /motion/get, /motion/cap, /healthz, /library, /curator/status)

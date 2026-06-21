@@ -22,3 +22,5 @@ data_*/
 # System/tool-specific ignores
 .DS_Store
 *~
+
+.venv\Lib

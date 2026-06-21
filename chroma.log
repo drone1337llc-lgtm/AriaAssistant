@@ -1,0 +1,18 @@
+WARNING:  [19-06-2026 21:41:27] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+INFO:     [19-06-2026 21:41:28] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+DEBUG:    [19-06-2026 21:41:28] Starting component System
+DEBUG:    [19-06-2026 21:41:28] Starting component OpenTelemetryClient
+DEBUG:    [19-06-2026 21:41:28] Starting component SqliteDB
+DEBUG:    [19-06-2026 21:41:28] Starting component SimpleQuotaEnforcer
+DEBUG:    [19-06-2026 21:41:28] Starting component Posthog
+DEBUG:    [19-06-2026 21:41:28] Starting component SimpleRateLimitEnforcer
+DEBUG:    [19-06-2026 21:41:28] Starting component LocalSegmentManager
+DEBUG:    [19-06-2026 21:41:28] Starting component LocalExecutor
+DEBUG:    [19-06-2026 21:41:28] Starting component SegmentAPI
+DEBUG:    [19-06-2026 21:41:28] Starting component SimpleAsyncRateLimitEnforcer
+ERROR:    [19-06-2026 21:41:29] Failed to send telemetry event ServerStartEvent: capture() takes 1 positional argument but 3 were given
+INFO:     [19-06-2026 21:41:29] Started server process [29684]
+INFO:     [19-06-2026 21:41:29] Waiting for application startup.
+INFO:     [19-06-2026 21:41:29] Application startup complete.
+INFO:     [19-06-2026 21:41:29] Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     [19-06-2026 21:41:30] 127.0.0.1:58088 - "GET /api/v1/heartbeat HTTP/1.1" 200

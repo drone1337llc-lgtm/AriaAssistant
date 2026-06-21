@@ -1,21 +1,21 @@
-INFO:     Started server process [27376]
+INFO:     Started server process [11996]
 INFO:     Waiting for application startup.
-07:08:48 INFO    aria_brain.server :: aria_brain starting on 0.0.0.0:8770
-07:08:48 INFO    aria_brain.memory :: chromadb warmup: initializing client + collections
-07:08:51 WARNING aria_brain.memory :: chromadb: remote unreachable (ValueError: Could not connect to a Chroma server. Are you sure it is running?); falling back to local DuckDB+Parquet
-07:08:51 ERROR   chromadb.telemetry.product.posthog :: Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
-07:08:51 INFO    aria_brain.memory :: chromadb: using local fallback at C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\brain\chroma_local
-07:08:51 ERROR   chromadb.telemetry.product.posthog :: Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
-07:08:51 INFO    aria_brain.memory ::   collection ready: aria_episodic
-07:08:51 ERROR   chromadb.telemetry.product.posthog :: Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
-07:08:51 INFO    aria_brain.memory ::   collection ready: aria_facts
-07:08:51 ERROR   chromadb.telemetry.product.posthog :: Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
-07:08:51 INFO    aria_brain.memory ::   collection ready: aria_thoughts
-07:08:51 INFO    aria_brain.reflection :: reflection scheduler: started (every 120 min)
-07:08:51 INFO    aria_brain.server :: aria_brain online
+07:09:18 INFO    aria_brain.server :: aria_brain starting on 0.0.0.0:8770
+07:09:18 INFO    aria_brain.memory :: chromadb warmup: initializing client + collections
+07:09:21 WARNING aria_brain.memory :: chromadb: remote unreachable (ValueError: Could not connect to a Chroma server. Are you sure it is running?); falling back to local DuckDB+Parquet
+07:09:21 ERROR   chromadb.telemetry.product.posthog :: Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+07:09:21 INFO    aria_brain.memory :: chromadb: using local fallback at C:\Users\Tench\Documents\AriaAssistantAppIKdiffusion\brain\chroma_local
+07:09:21 ERROR   chromadb.telemetry.product.posthog :: Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+07:09:21 INFO    aria_brain.memory ::   collection ready: aria_episodic
+07:09:21 ERROR   chromadb.telemetry.product.posthog :: Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+07:09:21 INFO    aria_brain.memory ::   collection ready: aria_facts
+07:09:21 ERROR   chromadb.telemetry.product.posthog :: Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+07:09:21 INFO    aria_brain.memory ::   collection ready: aria_thoughts
+07:09:21 INFO    aria_brain.reflection :: reflection scheduler: started (every 120 min)
+07:09:21 INFO    aria_brain.server :: aria_brain online
 INFO:     Application startup complete.
 ERROR:    [Errno 10048] error while attempting to bind on address ('0.0.0.0', 8770): [winerror 10048] only one usage of each socket address (protocol/network address/port) is normally permitted
 INFO:     Waiting for application shutdown.
-07:08:51 INFO    aria_brain.reflection :: reflection scheduler: stopped
-07:08:51 INFO    aria_brain.server :: aria_brain stopped
+07:09:21 INFO    aria_brain.reflection :: reflection scheduler: stopped
+07:09:21 INFO    aria_brain.server :: aria_brain stopped
 INFO:     Application shutdown complete.

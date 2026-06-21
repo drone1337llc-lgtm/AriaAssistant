@@ -23,6 +23,9 @@ personaplex/
 # Coqui XTTS training tree + checkpoints (GBs); the TTS server script lives in
 # scripts/ which IS tracked. Keep the model out of git.
 Coqui-TTS-XTTS-v2-/
+# ChromaDB vector-memory store (Aria's memory — machine-local, never commit)
+brain/chroma_local/
+**/chroma_local/
 # Motion / diffusion data + outputs
 FloodDiffusion/
 # Generated TTS audio cache

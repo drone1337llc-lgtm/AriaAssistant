@@ -1,0 +1,57 @@
+# ── Python ────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+# Virtual environments (each PC builds its own — never commit these)
+.venv/
+venv/
+env/
+**/.venv/
+
+# ── Godot / .NET ─────────────────────────────────────────────────────────
+.godot/
+*.import.bak
+# Mono/C# build output
+**/obj/
+**/bin/
+*.AssemblyAttributes.cs
+
+# ── Large / machine-local trees (do NOT commit) ─────────────────────────────
+# Cloned PersonaPlex repo (has its own git + multi-GB model cache)
+personaplex/
+# Coqui XTTS training tree + checkpoints (GBs); the TTS server script lives in
+# scripts/ which IS tracked. Keep the model out of git.
+Coqui-TTS-XTTS-v2-/
+# Motion / diffusion data + outputs
+FloodDiffusion/
+# Generated TTS audio cache
+tts_cache/
+**/tts_cache/
+# HuggingFace / model caches
+.cache/
+*.safetensors
+*.pth
+*.ckpt
+*.bin
+
+# ── Logs / runtime ──────────────────────────────────────────────────────────
+logs/
+**/logs/
+*.log
+*.pid
+
+# ── Secrets / machine config (commit .env.example, NOT .env) ────────────────
+.env
+brain/.env
+*.local.yaml
+
+# ── OS cruft ─────────────────────────────────────────────────────────────────
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# ── Editor ───────────────────────────────────────────────────────────────────
+.vs/
+.idea/
+.vscode/

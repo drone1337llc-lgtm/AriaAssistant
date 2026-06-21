@@ -11944,3 +11944,11 @@
 2026-06-21T07:14:33	[brain] started pid=2960
 2026-06-21T07:14:33	[tts_server] not running - restarting
 2026-06-21T07:14:33	[tts_server] started pid=27952
+2026-06-21T07:14:48	[brain] not running - restarting
+2026-06-21T07:14:48	[brain] started pid=8900
+2026-06-21T07:14:48	[tts_server] not running - restarting
+2026-06-21T07:14:48	[tts_server] started pid=21720
+2026-06-21T07:15:03	[brain] not running - restarting
+2026-06-21T07:15:04	[brain] started pid=25896
+2026-06-21T07:15:04	[tts_server] not running - restarting
+2026-06-21T07:15:04	[tts_server] started pid=31364
